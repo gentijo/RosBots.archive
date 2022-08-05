@@ -1,0 +1,68 @@
+#FROM ros:galactic-ros-base-focal
+ARG FROM_IMAGE=ubuntu:focal-20220801
+FROM $FROM_IMAGE
+
+
+
+ENV TERM=xterm-color
+ENV DEBIAN_FRONTEND=noninteractive
+
+ENV LC_ALL C
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
+
+ENV DISPLAY=host.docker.internal:0
+
+COPY ./files/ros_entrypoint.sh /opt/ros
+COPY ./files/ros_profile.sh /etc/profile.d
+
+RUN apt update
+RUN apt update
+RUN apt clean
+RUN apt -y upgrade
+
+RUN apt install -y apt-transport-https
+RUN apt install -y curl
+
+RUN apt install -y gnupg
+RUN apt install -y lsb-release
+#RUN apt install -y software-properties-common
+
+#RUN add-apt-repository universe
+
+RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(source /etc/os-release 
+
+RUN echo $UBUNTU_CODENAME) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null
+
+RUN apt autoremove --purge -y
+RUN apt clean
+RUN apt update
+
+RUN ifconfig
+RUN cat /etc/resolv.conf
+
+RUN apt install -y apt-utils
+RUN apt install -y wget
+RUN apt install -y emacs-nox
+#RUN apt install -y xterm
+#RUN apt install -y gnupg1
+RUN apt install -y net-tools
+RUN apt install -y iputils-ping
+#RUN apt install -y lighttpd
+RUN apt install -y iproute2
+
+RUN apt install -y ros-galactic-desktop
+RUN rm -rf /var/lib/apt/lists/*
+
+RUN apt install -y python3-rosdep
+#RUN rosdep init
+RUN rosdep update
+
+RUN add-apt-repository ppa:mattrose/terminator
+RUN apt update
+RUN apt install -y terminator
+
+
+#ENTRYPOINT ["/opt/ros/ros_entrypoint.sh"]

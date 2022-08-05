@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "uros_network_interfaces.h": "c",
+        "microbot.h": "c"
+    }
+}
