@@ -89,7 +89,7 @@ From the top level directory execute
 
 Execute the following commands
 
-- **cd /opt/ros/rosdev_ws/rosdev/agent**
+- **cd /opt/ros/ros_ws/agent**
 
 - **source /opt/ros/galactic/local_setup.bash**
 
@@ -106,7 +106,7 @@ Execute the following commands
 ### To run the MicroROS Agent
 Execute the following commands
 
-- **bash install/local_setup.bash**
+- **source install/local_setup.bash**
 
 - **ros2 run micro_ros_agent micro_ros_agent udp4 --port 8888**
 
