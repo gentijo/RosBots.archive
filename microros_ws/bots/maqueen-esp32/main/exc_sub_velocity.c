@@ -17,7 +17,10 @@ double ang_vel_;
 void sub_velocity_callback(const void * msgin)
 {
 	const geometry_msgs__msg__Twist *vel = (const geometry_msgs__msg__Twist *)msgin;
-	printf("Received: velocity");
+
+	printf("Received: velocity linear [%f %f %f] angular [%f %f %f]\r\n", 
+	 vel->linear.x, vel->linear.y,vel->linear.z, 
+	 vel->angular.x, vel->angular.y, vel->angular.z);
 	
 	lin_vel_x_ = vel->linear.x;
 	lin_vel_y_ = vel->linear.y;

@@ -6,7 +6,7 @@
 #define DOMAIN_ID 0
 
 const char * namespace = "";
-char name[26] = "turtle1";
+char name[26] = "TurtleBot";
 
 void micro_ros_task(void * arg)
 {
@@ -47,8 +47,8 @@ void micro_ros_task(void * arg)
     // Spin forever
 	while(1){
 		rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
-		usleep(100000);
-        printf(".");
+		usleep(1000);
+     ///   printf(".");
 	}
 
     RCCHECK(rcl_node_fini(&node));
