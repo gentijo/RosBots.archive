@@ -38,7 +38,7 @@ void register_velocity_subscription(char *name, rcl_node_t *node, rclc_executor_
 		&velocity_subscription,
 		node,
 		ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
-		"/turtle1/cmd_vel"));
+		"turtle1/cmd_vel"));
 
 	RCCHECK(rclc_executor_add_subscription(executor, &velocity_subscription, &velocity_msg, &sub_velocity_callback, ON_NEW_DATA));
 }

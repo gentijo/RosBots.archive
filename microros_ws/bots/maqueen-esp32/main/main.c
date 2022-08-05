@@ -3,8 +3,9 @@
 #include <uros_network_interfaces.h>
 #include "exc_sub_velocity.h"
 
-#define DOMAIN_ID 1
+#define DOMAIN_ID 0
 
+const char * namespace = "";
 char name[26] = "turtle1";
 
 void micro_ros_task(void * arg)
@@ -32,7 +33,8 @@ void micro_ros_task(void * arg)
 
     // create node
     rcl_node_t node;
-    RCCHECK(rclc_node_init_default(&node, name, "", &support));
+
+    RCCHECK(rclc_node_init_default(&node, name, namespace , &support));
     printf("Node Init\r\n");
 
      // create executor
