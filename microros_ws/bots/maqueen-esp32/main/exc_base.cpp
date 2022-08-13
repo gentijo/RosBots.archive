@@ -118,13 +118,6 @@ void subscription_callback(const void * msgin)
     last_command_time_ = nh_->now();
   }
 
-  void BotController_VelocityCallback(const geometry_msgs::msg::Twist::SharedPtr vel)
-  {
-    last_command_time_ = nh_->now();
-    lin_vel_x_ = vel->linear.x;
-    lin_vel_y_ = vel->linear.y;
-    ang_vel_ = vel->angular.z;
-  }
 
 void BotController_RotateAbsoluteAcceptCallback(const std::shared_ptr<RotateAbsoluteGoalHandle> goal_handle)
 {
@@ -141,7 +134,6 @@ void BotController_RotateAbsoluteAcceptCallback(const std::shared_ptr<RotateAbso
 }
 
 void BotController_Shutdown() {
-
 // Free resources
   RCCHECK(rcl_service_fini(&service, &node));
 }
@@ -152,14 +144,3 @@ static float normalizeAngle(float angle)
   return angle - (TWO_PI * std::floor((angle + PI) / (TWO_PI)));
 }
 
-
-void service_callback(const void * req, void * res){
-  // example_interfaces__srv__AddTwoInts_Request * req_in = (example_interfaces__srv__AddTwoInts_Request *) req;
-  // example_interfaces__srv__AddTwoInts_Response * res_in = (example_interfaces__srv__AddTwoInts_Response *) res;
-
-  // printf("Service request value: %d + %d.\n", (int) req_in->a, (int) req_in->b);
-
-  // res_in->sum = req_in->a + req_in->b;
-}
-
-}

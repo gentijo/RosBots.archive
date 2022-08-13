@@ -1,7 +1,11 @@
 #include "microbot.h"
 
+#include "esp32_i2c.h"
+#include "driver/uart.h"
+
 #include <uros_network_interfaces.h>
-#include "exc_sub_velocity.h"
+#include "locomotion_control.h"
+#include "exc_sub_timer.h"
 
 #define DOMAIN_ID 0
 
@@ -39,16 +43,22 @@ void micro_ros_task(void * arg)
 
      // create executor
     rclc_executor_t executor;
-    RCCHECK(rclc_executor_init(&executor, &support.context, 1, &allocator));
+    RCCHECK(rclc_executor_init(&executor, &support.context, 2, &allocator));
     printf("Executor Init\r\n");
+    
+    printf("Init I2C subsystem\r\n");
+    i2c_master_init(1);
 
-    register_velocity_subscription(name, &node, &executor);
+    printf("Init Timer Subscription\r\n");
+    register_timer_subscription(&support, &node, &executor);
+
+    locomotion_ctrl_init(name, &node, &support, &executor);
+ 
   
     // Spin forever
 	while(1){
 		rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
-		usleep(1000);
-     ///   printf(".");
+		usleep(100000);
 	}
 
     RCCHECK(rcl_node_fini(&node));
@@ -59,6 +69,16 @@ void app_main(void)
 #if defined(CONFIG_MICRO_ROS_ESP_NETIF_WLAN) || defined(CONFIG_MICRO_ROS_ESP_NETIF_ENET)
     ESP_ERROR_CHECK(uros_network_interface_initialize());
 #endif
+    const uart_port_t uart_num = UART_NUM_0;
+    uart_config_t uart_config = {
+        .baud_rate = 115200,
+        .data_bits = UART_DATA_8_BITS,
+        .parity = UART_PARITY_DISABLE,
+        .stop_bits = UART_STOP_BITS_1,
+        .flow_ctrl =  UART_HW_FLOWCTRL_DISABLE
+    };
+    // Configure UART parameters
+    ESP_ERROR_CHECK(uart_param_config(uart_num, &uart_config));
 
     //pin micro-ros task in APP_CPU to make PRO_CPU to deal with wifi:
     xTaskCreate(micro_ros_task,
@@ -67,4 +87,5 @@ void app_main(void)
             NULL,
             CONFIG_MICRO_ROS_APP_TASK_PRIO,
             NULL);
+
 }
