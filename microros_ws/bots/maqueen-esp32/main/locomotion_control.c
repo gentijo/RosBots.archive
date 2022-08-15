@@ -1,10 +1,14 @@
 #include <stdio.h>
 #include <math.h>
 
+
 #include "microbot.h"
 
-#include "locomotion_control.h"
+#include "maqueen.h"
 #include "maqueen_motor.h"
+
+#include "locomotion_control.h"
+
 
 #include "geometry_msgs/msg/twist.h"
 
@@ -149,7 +153,21 @@ void locomotion_drive_task(void * arg)
 			//printf("Motor stop\n\r");
 			maqueen_motor_stop();
 			usleep(100000);
+
+			int dist_l =  maqueen_motor_readDistance(Motor_Left);
+			int speed_l = maqueen_motor_readSpeed(Motor_Left);
+			int dir_l =  maqueen_motor_readDirection(Motor_Left);
+
+			int dist_r =  maqueen_motor_readDistance(Motor_Right);
+			int speed_r = maqueen_motor_readSpeed(Motor_Right);
+			int dir_r =  maqueen_motor_readDirection(Motor_Right);
+
+			printf("Distance %d:%d  Speed %d:%d  Dir %d:%d\r\n",
+				dist_l, dist_r, speed_l, speed_r, dir_l,dir_r);
+
 		}
+
+
 
 	}
 }

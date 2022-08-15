@@ -47,7 +47,7 @@ void micro_ros_task(void * arg)
     printf("Executor Init\r\n");
     
     printf("Init I2C subsystem\r\n");
-    i2c_master_init(1);
+    i2c_host_init(1);
 
     printf("Init Timer Subscription\r\n");
     register_timer_subscription(&support, &node, &executor);
