@@ -63,15 +63,16 @@ void I2Cdev::initialize(uint8_t _i2c_port, bool host_mode) {
 esp_err_t I2Cdev::i2c_host_init()
 {
 
-    i2c_config_t conf = {
-        .mode = I2C_MODE_MASTER,
-        .sda_io_num = I2C_HOST_SDA_IO,
-        .sda_pullup_en = GPIO_PULLUP_ENABLE,
-        .scl_io_num = I2C_HOST_SCL_IO,
-        .scl_pullup_en = GPIO_PULLUP_ENABLE,
-        .master.clk_speed = I2C_HOST_FREQ_HZ
-        // .clk_flags = 0,          /*!< Optional, you can use I2C_SCLK_SRC_FLAG_* flags to choose i2c source clock here. */
-    };
+    i2c_config_t conf;
+
+    conf.mode = I2C_MODE_MASTER;
+    conf.sda_io_num = I2C_HOST_SDA_IO;
+    conf.sda_pullup_en = GPIO_PULLUP_ENABLE;
+    conf.scl_io_num = I2C_HOST_SCL_IO;
+    conf.scl_pullup_en = GPIO_PULLUP_ENABLE;
+    conf.master.clk_speed = I2C_HOST_FREQ_HZ;
+    // conf.clk_flags = 0,          /*!< Optional, you can use I2C_SCLK_SRC_FLAG_* flags to choose i2c source clock here. */
+
 
     esp_err_t err = i2c_param_config(this->i2c_port, &conf);
     if (err != ESP_OK) {
@@ -84,17 +85,17 @@ esp_err_t I2Cdev::i2c_host_init()
 /**
  * @brief i2c device initialization
  */
-esp_err_t i2c_device_init()
+esp_err_t I2Cdev::i2c_device_init()
 {
-    i2c_config_t conf_device = {
-        .sda_io_num = I2C_DEVICE_SDA_IO,
-        .sda_pullup_en = GPIO_PULLUP_ENABLE,
-        .scl_io_num = I2C_DEVICE_SCL_IO,
-        .scl_pullup_en = GPIO_PULLUP_ENABLE,
-        .mode = I2C_MODE_SLAVE,
-        .slave.addr_10bit_en = 0,
-        .slave.slave_addr = ESP_DEVICE_ADDR
-    };
+    i2c_config_t conf_device;
+    conf_device.sda_io_num = I2C_DEVICE_SDA_IO;
+    conf_device.sda_pullup_en = GPIO_PULLUP_ENABLE;
+    conf_device.scl_io_num = I2C_DEVICE_SCL_IO;
+    conf_device.scl_pullup_en = GPIO_PULLUP_ENABLE;
+    conf_device.mode = I2C_MODE_SLAVE;
+    conf_device.slave.addr_10bit_en = 0;
+    conf_device.slave.slave_addr = ESP_DEVICE_ADDR;
+
 
     esp_err_t err = i2c_param_config(this->i2c_port, &conf_device);
     if (err != ESP_OK) {
