@@ -2,12 +2,12 @@
 #include "driver/uart.h"
 #include <uros_network_interfaces.h>
 
-#include "microros_app.h"
+// #include "microros_app.h"
 
 extern "C" void micro_ros_task(void *arg)
 {
-    microros_app uros_app;
-    uros_app.init();
+//    microros_app uros_app;
+//    uros_app.init();
 }
 
 extern "C" void app_main(void)
