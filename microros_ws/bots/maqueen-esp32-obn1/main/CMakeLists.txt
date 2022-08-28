@@ -1,5 +1,3 @@
-idf_component_register(
-    SRCS "main.c" 
-        "exc_sub_timer.c" 
-    INCLUDE_DIRS "../include/"
-)
+set(COMPONENT_SRCS "main.cpp")
+set(COMPONENT_ADD_INCLUDEDIRS ".")
+register_component()
