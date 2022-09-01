@@ -20,13 +20,17 @@ void micro_ros_task(void * arg)
 	// Create init_options.
     printf("Initializing the system");
 	rcl_init_options_t init_options = rcl_get_zero_initialized_init_options();
+
+    printf("\r\nRCL Options Init");
 	RCCHECK(rcl_init_options_init(&init_options, allocator));
+    printf("\r\n RCL Set Domain ID");
 	RCCHECK(rcl_init_options_set_domain_id(&init_options, DOMAIN_ID));
 
 #ifdef CONFIG_MICRO_ROS_ESP_XRCE_DDS_MIDDLEWARE
 	rmw_init_options_t* rmw_options = rcl_init_options_get_rmw_init_options(&init_options);
 
 	// Static Agent IP and port can be used instead of autodisvery.
+    printf("\r\nConfigure ROS Middleware");
 	RCCHECK(rmw_uros_options_set_udp_address(CONFIG_MICRO_ROS_AGENT_IP, CONFIG_MICRO_ROS_AGENT_PORT, rmw_options));
 	//RCCHECK(rmw_uros_discover_agent(rmw_options));
 #endif

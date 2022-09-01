@@ -2,13 +2,26 @@
 #include "driver/uart.h"
 #include <uros_network_interfaces.h>
 
-// #include "microros_app.h"
+#include "components/microros_app/microros_app.h"
+#include "drivers/esp_I2Cdev/esp_I2Cdev.h"
+#include "interfaces/ros_subscription_iface.h"
+#include "components/microros_timer_mgr/microros_timer_mgr.h"
+
 
 extern "C" void micro_ros_task(void *arg)
 {
-//    microros_app uros_app;
-//    uros_app.init();
-}
+    microros_app uros_app;
+    uros_app.init();
+
+    esp_I2Cdev* i2c_host = new esp_I2Cdev();
+    i2c_host->initialize(1, true);
+    uros_app.setI2CHostDriver(i2c_host);
+
+    microros_timer_mgr* timer_mgr1 = new microros_timer_mgr();
+    uros_app.add_ros_subscription(timer_mgr1, &uros_app);
+
+    uros_app.run();
+};
 
 extern "C" void app_main(void)
 {
@@ -33,4 +46,4 @@ extern "C" void app_main(void)
                 NULL,
                 CONFIG_MICRO_ROS_APP_TASK_PRIO,
                 NULL);
-}
+};
