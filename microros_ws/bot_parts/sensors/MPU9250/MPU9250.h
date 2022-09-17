@@ -37,8 +37,8 @@ THE SOFTWARE.
 #ifndef _MPU9250_H_
 #define _MPU9250_H_
 
-#include "I2Cdev.h"
-#include <avr/pgmspace.h>
+#include "interfaces/I2CDriverSpec.h"
+#include "components/microros_app/microros_app.h"
 
 //Magnetometer Registers
 #define MPU9150_RA_MAG_ADDRESS		0x0C
@@ -417,8 +417,8 @@ THE SOFTWARE.
 
 class MPU9250 {
     public:
-        MPU9250();
-        MPU9250(uint8_t address);
+        MPU9250(microros_app app);
+        MPU9250(microros_app app, uint8_t address);
 
         void initialize();
         bool testConnection();

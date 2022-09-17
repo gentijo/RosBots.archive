@@ -61,22 +61,22 @@ extern "C" void locomotion_drive_task(void * arg)
 			switch (cmd.direction) {
 				case right:
 				//	printf("turn right\r\n");
-					maqueen_motor_turnRight(cmd.speed);
+					c_loc_mgr->getDrive()->drive_turnRight(cmd.speed);
 					break;
 
 				case left:				
 				//	printf("turn left\r\n");
-					maqueen_motor_turnLeft(cmd.speed);
+					c_loc_mgr->getDrive()->drive_turnLeft(cmd.speed);
 					break;
 
 				case forward:
 					// printf("turn forward\r\n");
-					maqueen_motor_forward(cmd.speed);
+					c_loc_mgr->getDrive()->drive_forward(cmd.speed);
 					break;
 
 				case backward:
 					//printf("turn backward\r\n");
-					maqueen_motor_backward(cmd.speed);
+					c_loc_mgr->getDrive()->drive_backward(cmd.speed);
 					break;
 			}
 
@@ -87,19 +87,14 @@ extern "C" void locomotion_drive_task(void * arg)
 		}
 		else {		
 			//printf("Motor stop\n\r");
-			maqueen_motor_stop();
+			c_loc_mgr->getDrive()->drive_stop();
 			usleep(100000);
 
-			int dist_l =  maqueen_motor_readDistance(Motor_Left);
-			int speed_l = maqueen_motor_readSpeed(Motor_Left);
-			int dir_l =  maqueen_motor_readDirection(Motor_Left);
+			int dist =  c_loc_mgr->getDrive()->drive_readDistance();
+			int speed = c_loc_mgr->getDrive()->drive_readSpeed();
+			int dir =   c_loc_mgr->getDrive()->drive_readDirection();
 
-			int dist_r =  maqueen_motor_readDistance(Motor_Right);
-			int speed_r = maqueen_motor_readSpeed(Motor_Right);
-			int dir_r =  maqueen_motor_readDirection(Motor_Right);
-
-			printf("Distance %d:%d  Speed %d:%d  Dir %d:%d\r\n",
-				dist_l, dist_r, speed_l, speed_r, dir_l,dir_r);
+			printf("Distance %d  Speed %d  Dir %d\r\n", dist, speed, dir);
 
 		}
 	}
@@ -107,6 +102,10 @@ extern "C" void locomotion_drive_task(void * arg)
 
 	locomotion_mgr::locomotion_mgr() {
 		c_loc_mgr = this;
+	}
+
+	void locomotion_mgr::setDriveController(locomotion_drive_iface *driveCtrl) {
+		this->driveCtrl = driveCtrl;
 	}
 
 	void locomotion_mgr::attach(microros_app *app)

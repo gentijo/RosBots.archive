@@ -1,26 +1,14 @@
-#include "Wire.h"
 
-// I2Cdev and MPU9250 must be installed as libraries, or else the .cpp/.h files
-// for both classes must be in the include path of your project
-#include "I2Cdev.h"
 #include "MPU9250.h"
-#include "BMP180.h"
 
-// class default I2C address is 0x68
-// specific I2C addresses may be passed as a parameter here
-// AD0 low = 0x68 (default for InvenSense evaluation board)
-// AD0 high = 0x69
 MPU9250 accelgyro;
-I2Cdev   I2C_M;
 
 uint8_t buffer_m[6];
 
 
 int16_t ax, ay, az;
 int16_t gx, gy, gz;
-int16_t   mx, my, mz;
-
-
+int16_t mx, my, mz;
 
 float heading;
 float tiltheading;
@@ -48,36 +36,10 @@ volatile int mx_min = 0;
 volatile int my_min = 0;
 volatile int mz_min = 0;
 
-float temperature;
-float pressure;
-float atm;
-float altitude;
-BMP180 Barometer;
 
 void setup()
 {
-    // join I2C bus (I2Cdev library doesn't do this automatically)
-    Wire.begin();
-
-    // initialize serial communication
-    // (38400 chosen because it works as well at 8MHz as it does at 16MHz, but
-    // it's really up to you depending on your project)
-    Serial.begin(38400);
-
-    // initialize device
-    Serial.println("Initializing I2C devices...");
     accelgyro.initialize();
-    Barometer.init();
-
-    // verify connection
-    Serial.println("Testing device connections...");
-    Serial.println(accelgyro.testConnection() ? "MPU9250 connection successful" : "MPU9250 connection failed");
-
-    delay(1000);
-    Serial.println("     ");
-
-    //  Mxyz_init_calibrated ();
-
 }
 
 void loop()
@@ -122,29 +84,6 @@ void loop()
     Serial.println("The clockwise angle between the magnetic north and the projection of the positive X-Axis in the horizontal plane:");
     Serial.println(tiltheading);
     Serial.println("   ");
-
-    temperature = Barometer.bmp180GetTemperature(Barometer.bmp180ReadUT()); //Get the temperature, bmp180ReadUT MUST be called first
-    pressure = Barometer.bmp180GetPressure(Barometer.bmp180ReadUP());//Get the temperature
-    altitude = Barometer.calcAltitude(pressure); //Uncompensated caculation - in Meters
-    atm = pressure / 101325;
-
-    Serial.print("Temperature: ");
-    Serial.print(temperature, 2); //display 2 decimal places
-    Serial.println("deg C");
-
-    Serial.print("Pressure: ");
-    Serial.print(pressure, 0); //whole number only.
-    Serial.println(" Pa");
-
-    Serial.print("Ralated Atmosphere: ");
-    Serial.println(atm, 4); //display 4 decimal places
-
-    Serial.print("Altitude: ");
-    Serial.print(altitude, 2); //display 2 decimal places
-    Serial.println(" m");
-
-    Serial.println();
-    delay(1000);
 
 }
 
@@ -238,10 +177,6 @@ void get_calibration_Data ()
 }
 
 
-
-
-
-
 void get_one_sample_date_mxyz()
 {
     getCompass_Data();
@@ -282,7 +217,7 @@ void getCompass_Data(void)
     Mxyz[2] = (double) mz * 1200 / 4096;
 }
 
-void getCompassDate_calibrated ()
+void getCompassData_calibrated ()
 {
     getCompass_Data();
     Mxyz[0] = Mxyz[0] - mx_centre;
