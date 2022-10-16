@@ -4,17 +4,17 @@
 ARG FROM_IMAGE=ubuntu:focal-20220801
 FROM $FROM_IMAGE
 
-RUN echo "nameserver 8.8.8.8" >> /etc/resolv.conf
-RUN cat /etc/resolv.conf
+#RUN echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+#RUN cat /etc/resolv.conf
 
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime 
 
-RUN apt update
-RUN apt upgrade
-RUN apt clean
+RUN apt -y update
+RUN apt -y  upgrade
+RUN apt -y clean
 
 #RUN apt install -y tzdata
 #RUN rm -rf /var/lib/apt/lists/*
