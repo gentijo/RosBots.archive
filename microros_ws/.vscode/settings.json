@@ -4,5 +4,6 @@
         "microbot.h": "c",
         "rclc.h": "c",
         "ros_subscriptionspec.h": "c"
-    }
+    },
+    "cmake.configureOnOpen": false
 }
