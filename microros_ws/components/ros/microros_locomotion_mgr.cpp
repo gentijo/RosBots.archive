@@ -6,18 +6,20 @@ microros_app* 				microros_locomotion_mgr::s_uros_app=NULL;
 microros_locomotion_mgr*	microros_locomotion_mgr::s_loc_mgr=NULL;
 if_RTOS* 					microros_locomotion_mgr::s_rtos=NULL;
 
-microros_locomotion_mgr::microros_locomotion_mgr() {
-	microros_locomotion_mgr::s_loc_mgr = this;
-}
+
+
 
 void microros_locomotion_mgr::attach(microros_app *uros_app, if_RTOS *rtos)
 {
+	microros_locomotion_mgr::s_loc_mgr = this;
+
 	microros_locomotion_mgr::s_uros_app = uros_app;
 	microros_locomotion_mgr::s_rtos = rtos;
 
 	microros_locomotion_mgr::s_loc_mgr->m_locomotionCmdQueue = 
-		microros_locomotion_mgr::s_rtos->queue_create( 10, sizeof( struct LocomotionCmd ) );
+	 	microros_locomotion_mgr::s_rtos->queue_create( 10, sizeof( struct LocomotionCmd ) );
 
+	printf("Creating locomotion reader task\r\n");
 	microros_locomotion_mgr::s_rtos->create_task(
 		microros_locomotion_mgr::locomotion_drive_task,
 		"locomotion_drive_task",
@@ -26,20 +28,20 @@ void microros_locomotion_mgr::attach(microros_app *uros_app, if_RTOS *rtos)
 		CONFIG_MICRO_ROS_APP_TASK_PRIO,
 		NULL);
 
-	printf("Registering command velocity subscription\r\n");
+	printf("Init command velocity subscription\r\n");
+	// RCCHECK(rclc_subscription_init_default(
+	// 	&microros_locomotion_mgr::s_loc_mgr->m_velocity_subscription,
+	// 	microros_locomotion_mgr::s_uros_app->get_ROS_Node(),
+	// 	ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
+	// 	microros_locomotion_mgr::s_uros_app->get_Node_Name()  //, "/cmd_vel")
+	// ));
 
-	RCCHECK(rclc_subscription_init_default(
-		&microros_locomotion_mgr::s_loc_mgr->m_velocity_subscription,
-		microros_locomotion_mgr::s_uros_app->get_ROS_Node(),
-		ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
-		microros_locomotion_mgr::s_uros_app->get_Node_Name()  //, "/cmd_vel")
-	));
-
-	RCCHECK(rclc_executor_add_subscription(
-		microros_locomotion_mgr::s_uros_app->get_ROS_Executor(), 
-		&microros_locomotion_mgr::s_loc_mgr->m_velocity_subscription, 
-		&microros_locomotion_mgr::s_loc_mgr->m_velocity_msg, 
-		&microros_locomotion_mgr::sub_velocity_callback, ON_NEW_DATA));
+	printf("Add command velocity subscription\r\n");
+	// RCCHECK(rclc_executor_add_subscription(
+	// 	microros_locomotion_mgr::s_uros_app->get_ROS_Executor(), 
+	// 	&microros_locomotion_mgr::s_loc_mgr->m_velocity_subscription, 
+	// 	&microros_locomotion_mgr::s_loc_mgr->m_velocity_msg, 
+	// 	&microros_locomotion_mgr::sub_velocity_callback, ON_NEW_DATA));
 
 }
 
@@ -100,7 +102,9 @@ void microros_locomotion_mgr::locomotion_drive_task(void * arg)
 {
 	while(1) {
 		
-		locomotion_cmd_t  cmd;
+		printf("loco drive task\r\n");
+
+		struct LocomotionCmd cmd;
 		if (microros_locomotion_mgr::s_rtos->queue_receive(
 			microros_locomotion_mgr::s_loc_mgr->m_locomotionCmdQueue, ( void * ) &cmd, 
 			( TickType_t ) 500 / portTICK_PERIOD_MS)) {
@@ -137,9 +141,12 @@ void microros_locomotion_mgr::locomotion_drive_task(void * arg)
 		}
 		else {		
 
-			printf("Motor stop\n\r");
-			microros_locomotion_mgr::s_loc_mgr->getDriveController()->drive_stop();
+			printf("Motor stop 1\n\r");
+
+//			microros_locomotion_mgr::s_loc_mgr->getDriveController()->drive_stop();
 			usleep(100000);
+
+			printf("Motor stop 2\n\r");
 
 			// int dist =  microros_locomotion_mgr::s_loc_mgr->getDriveController()->drive_readDistance();
 			// int speed = microros_locomotion_mgr::s_loc_mgr->getDriveController()->drive_readSpeed();
@@ -151,3 +158,4 @@ void microros_locomotion_mgr::locomotion_drive_task(void * arg)
 	}
 
 }
+

@@ -17,8 +17,14 @@ void mros_maqueen_esp32_freertos::init() {
     esp32_idf_app::init();
     microros_app::init(this);
 
-    microros_locomotion_mgr locMgr;
-    maqueen_mbits_drive     driveCtrl(this);
-    locMgr.setDriveController(&driveCtrl);
-    this->add_ros_subscription(&locMgr);
+
 };
+
+
+void microros_app::ROS_init_ok() {
+    printf("\r\nROS Init OK\r\n");
+
+    microros_locomotion_mgr *locMgr = new microros_locomotion_mgr();
+    locMgr->setDriveController(new maqueen_mbits_drive((if_platform *)this));
+    this->add_ros_subscription(locMgr);
+}

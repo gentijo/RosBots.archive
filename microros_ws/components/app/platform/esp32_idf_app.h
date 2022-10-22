@@ -18,7 +18,9 @@
 class esp32_idf_app : public if_platform {
 
     public:
-        esp32_idf_app();
+        esp32_idf_app() {
+        };
+        
         void                init();
         void                setI2CHostDriver(if_I2C_driver *i2c_driver);
         if_I2C_driver*      getI2CHostDriver();
