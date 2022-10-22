@@ -3,9 +3,7 @@
 #include "esp32_idf_app.h"
 #include <uros_network_interfaces.h>
 
-esp32_idf_app::esp32_idf_app() {
 
-}
 
 void    esp32_idf_app::init() {
 

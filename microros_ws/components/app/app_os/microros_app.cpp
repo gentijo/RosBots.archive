@@ -4,11 +4,6 @@ microros_app*	microros_app::s_uros_app = NULL;
 if_RTOS*		microros_app::s_rtos = NULL;
 
 
-microros_app::microros_app() {
-	microros_app::s_uros_app = this;
-}
-
-
 void microros_app::init(if_RTOS *rtos) {
 
 	s_rtos = rtos;
@@ -58,6 +53,7 @@ char* microros_app::get_Node_Namespace(){
 	return microros_app::s_uros_app->m_namespace;
 }
 
+
 void microros_app::microros_task(void * arg)
 {
 	microros_app::s_uros_app->m_allocator = rcl_get_default_allocator();
@@ -105,6 +101,7 @@ void microros_app::microros_task(void * arg)
 
 	microros_app::s_uros_app->add_ros_subscription(&microros_app::s_uros_app->m_TimerMgr);
 
+	microros_app::s_uros_app->ROS_init_ok();
  
     // Spin forever
 	while(1){

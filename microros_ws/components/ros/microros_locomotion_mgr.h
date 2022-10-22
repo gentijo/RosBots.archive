@@ -30,7 +30,9 @@ typedef struct LocomotionCmd locomotion_cmd_t;
 
 class microros_locomotion_mgr : public if_ros_subscription {
     public:
-        microros_locomotion_mgr();
+        microros_locomotion_mgr() {
+            printf("Locomotion mgr create");
+        };
 
         void attach(microros_app *uros_app, if_RTOS *rtos);
         void release();
@@ -44,13 +46,13 @@ class microros_locomotion_mgr : public if_ros_subscription {
 
     private:
         
-        rtos_queue_handle_t         m_locomotionCmdQueue;
         geometry_msgs__msg__Twist   m_velocity_msg;
         rcl_subscription_t          m_velocity_subscription;
 
         if_locomotion_drive*        m_driveCtrl;
 
     private:
+        rtos_queue_handle_t             m_locomotionCmdQueue;
         static microros_app             *s_uros_app;
         static microros_locomotion_mgr  *s_loc_mgr;
         static if_RTOS                  *s_rtos;
