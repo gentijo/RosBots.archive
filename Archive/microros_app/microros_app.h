@@ -36,7 +36,7 @@ class microros_app {
     private:
         uint8_t m_domain_id = 0;
         char    m_namespace[26] = "";
-        char    m_name[26] = "Maqueen-Atlo-Node";
+        char    m_name[26] = "TurtleBot";
 
 
         I2Cdev              m_i2c_driver_host;

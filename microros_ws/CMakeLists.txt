@@ -1,5 +1,4 @@
-idf_component_register(SRCS "network_interfaces/uros_ethernet_netif.c" "network_interfaces/uros_wlan_netif.c"
-                       INCLUDE_DIRS "network_interfaces"
+idf_component_register(SRCS "components/network_interfaces/uros_ethernet_netif.c" "components/network_interfaces/uros_wlan_netif.c"
                        REQUIRES nvs_flash)
 
 if(CMAKE_GENERATOR STREQUAL "Unix Makefiles")

@@ -39,10 +39,14 @@ class microros_locomotion_mgr : public if_ros_subscription {
 
         microros_locomotion_mgr     *setDriveController( if_locomotion_drive *driveCtrl) {
 		    this->m_driveCtrl = driveCtrl;
+            printf("\r\nSetting Drive Control %p for LocMgr %p\r\n", this->m_driveCtrl, this);
 		    return this; 
         };
 
-        if_locomotion_drive         *getDriveController() { return m_driveCtrl; }
+        if_locomotion_drive         *getDriveController() { 
+            printf("\r\nGetting Drive Control %p for LocMgr %p\r\n", this->m_driveCtrl, this);
+            return m_driveCtrl; 
+        }
 
     private:
         

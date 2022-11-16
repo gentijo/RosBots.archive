@@ -9,7 +9,7 @@ docker run --privileged -it \
 --env DISPLAY=$DISPLAY \
 --env XAUTHORITY=/root/.Xauthority \
 -v $XAUTHORITY:/root/.Xauthority \
--v `pwd`/ros_ws/:/opt/ros/ros_ws/  \
+-v `pwd`/ros_ws:/opt/ros/ros_ws  \
 -p 8888:8888/udp \
 rosimg bash
 

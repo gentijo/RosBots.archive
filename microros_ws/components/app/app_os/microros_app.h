@@ -56,7 +56,7 @@ class microros_app : public if_microros_app {
     private:
         uint8_t m_domain_id = 0;
         char    m_namespace[26] = "";
-        char    m_name[26] = "topcam";
+        char    m_name[26] = "turtle1";
         
         if_ros_subscription* subscriptions[MAX_SUBSCRIPTIONS];
         int subscriptions_index = 0;
