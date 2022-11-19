@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 #include "esp_log.h"
 #include "driver/i2c.h"
@@ -39,11 +41,8 @@
 
 class esp_I2C : public if_I2C_driver {
     public:
-        esp_I2C() {
 
-        };
-
-        void        initialize(uint8_t _i2c_port, bool host_mode);
+        void       initialize(uint8_t _i2c_port, bool host_mode);
 
         int8_t     readBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *data, uint16_t timeout) { return 0; };
         bool       writeBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *data);

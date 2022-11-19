@@ -2,8 +2,9 @@
 #ifndef _I2C_DRIVER_SPEC_H_
 #define _I2C_DRIVER_SPEC_H_
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 

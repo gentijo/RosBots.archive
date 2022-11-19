@@ -24,7 +24,7 @@ void esp32_idf_app::init() {
 
     printf("\r\n\n\n\nPlatform Init %s %s\r\n",ESP_WIFI_SSID, ESP_WIFI_PASS );
   
-    if_I2C_driver* i2c_host = new esp_I2C();
+    esp_I2C* i2c_host = new esp_I2C();
     i2c_host->initialize(1, true);
     this->setI2CHostDriver(i2c_host);
 

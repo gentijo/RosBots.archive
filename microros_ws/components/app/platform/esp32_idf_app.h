@@ -11,7 +11,7 @@
 #include "interfaces/if_platform.h"
 #include "drivers/esp_I2C/esp_i2c.h"
 
-
+#include "network_interfaces/uros_network_interfaces.h"
 
 #define ESP_WIFI_SSID      CONFIG_ESP_WIFI_SSID
 #define ESP_WIFI_PASS      CONFIG_ESP_WIFI_PASSWORD
