@@ -1,0 +1,76 @@
+// ======================== tasks.json ========================
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [{
+        "label": "Configure",
+        "type": "shell",
+        "command": "source /opt/esp/idf/export.sh && idf.py menuconfig",
+        "windows": { "command": "%userprofile%\\esp\\esp-idf\\export.bat && idf.py menuconfig" }
+      },
+      {
+        "label": "Build",
+        "group": "build",
+        "type": "shell",
+        "command": "idf.py build",
+      },
+      {
+        "label": "Get size",
+        "group": "build",
+        "type": "shell",
+        "command": "idf.py size",
+      },
+      {
+        "label": "Clean",
+        "group": "build",
+        "type": "shell",
+        "command": "source /opt/esp/idf/export.sh && idf.py clean",
+      },
+      {
+        "label": "Clean (full)",
+        "group": "build",
+        "type": "shell",
+        "command": "source /opt/esp/idf/export.sh && idf.py fullclean",
+      },
+      {
+        "label": "Flash",
+        "group": "test",
+        "type": "shell",
+        "command": "source /opt/esp/idf/export.sh && idf.py fullclean",
+      },
+      {
+        "label": "Erase flash",
+        "group": "build",
+        "type": "shell",
+        "command": ". $HOME/esp/esp-idf/export.sh && idf.py erase_flash",
+        "windows": { "command": "%userprofile%\\esp\\esp-idf\\export.bat && idf.py erase_flash" }
+      },
+      {
+        "label": "Monitor",
+        "group": "test",
+        "type": "shell",
+        "command": "idf.py monitor",
+        "isBackground": false,
+        //"dependsOn": ["Flash"]
+      },
+      {
+      "label":  "OpenOCD",
+        "type": "shell",
+        "command": ". /opt/esp/idf/export.sh && openocd -f interface/ftdi/esp32_devkitj_v1.cfg -f board/esp32-wrover.cfg",
+        "isBackground": true,
+        "problemMatcher": {
+          "pattern": {
+            "regexp": "^(Info |Warn ):(.*)$", // Ignore errors
+            "severity": 1,
+            "message": 2
+          },
+          "background": {
+            "activeOnStart": false,
+            "beginsPattern": ".",
+            "endsPattern": "Info : Listening on port \\d+ for gdb connections"
+          }
+        }
+      }
+    ]
+  }

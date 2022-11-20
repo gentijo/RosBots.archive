@@ -4,13 +4,18 @@
 #include "app/rtos/freertos_app.h"
 
 
-class mros_maqueen_esp32_freertos : public microros_app, public esp32_idf_app, public freertos_app {
+class mros_maqueen_esp32_freertos {
 
     public:
         mros_maqueen_esp32_freertos(){
 
         };
 
-        void init();
+        void initialize();
+
+    public: 
+        esp32_idf_app *m_platform;
+        microros_app  *m_ros_app;
+        freertos_app  *m_rtos;
 
 };

@@ -48,7 +48,7 @@ esp_I2Cdev::esp_I2Cdev() {
  */
 void esp_I2Cdev::initialize(uint8_t _i2c_port, bool host_mode) {
 
-    printf("\r\nInitialize I2C port %d host mode: %d", _i2c_port, host_mode );
+    printf("\r\n\n\nInitialize I2C port %d host mode: %d", _i2c_port, host_mode );
 	this->i2c_port = _i2c_port;
 	if (host_mode) this->i2c_host_init();
 	else this->i2c_device_init();
@@ -287,8 +287,10 @@ bool esp_I2Cdev::writeByte(uint8_t devAddr, uint8_t regAddr, uint8_t data) {
  * @return Status of operation (true = success)
  */
 bool esp_I2Cdev::writeBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *data){
+
 	i2c_cmd_handle_t cmd;
 
+    printf("\r\nWrite Bytes");
 	cmd = i2c_cmd_link_create();
 	ESP_ERROR_CHECK(i2c_master_start(cmd));
 	ESP_ERROR_CHECK(i2c_master_write_byte(cmd, (devAddr << 1) | I2C_MASTER_WRITE, 1));

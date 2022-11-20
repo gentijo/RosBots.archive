@@ -15,6 +15,7 @@ class maqueen_mbits_drive : public if_locomotion_drive {
     public:
 
         maqueen_mbits_drive(if_platform* platform) {
+            printf("\r\n\nMBits Drive Const PLtform:%p  MBits Drive %p\r\n", platform, this);
             this->m_platform =  platform;
         }
 

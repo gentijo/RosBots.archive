@@ -5,14 +5,15 @@
 #define I2C_DEFAULT_TIMEOUT 100
 void maqueen_mbits_drive::drive_forward(uint8_t speed, uint16_t distance)
 {
-
+  printf("Drive Forward\r\n");
   uint8_t buf[4] = {
       Motor_Forward,
       speed,
       Motor_Forward,
       speed};
 
-  this->m_platform->getI2CHostDriver()->writeBytes(
+  if_I2C_driver* i2c_drv = m_platform->getI2CHostDriver();
+  i2c_drv->writeBytes(
     this->Maqueen_I2C_DevAddr, LEFT_MOTOR_REGISTER, 4, buf);
 
 }
