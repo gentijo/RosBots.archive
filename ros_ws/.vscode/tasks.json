@@ -1,0 +1,23 @@
+// ======================== tasks.json ========================
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Agent",
+            "group": "none",
+            "type": "shell",
+            "options": {},
+            "command": "sh /opt/ros/ros_ws/agent/startAgent.sh"
+        },
+        {
+            "label": "Run TeleopKey",
+            "group": "none",
+            "type": "shell",
+            "options": {},
+            "command": "sh /opt/ros/ros_ws/startTeleoop.sh"
+        }
+
+    ]
+}
