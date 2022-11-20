@@ -37,8 +37,7 @@ void maqueen_mbits_drive::drive_turnLeft(uint8_t speed, uint8_t degrees, uint8_t
   if (speed < 2)
     speed = 2;
 
-  uint8_t buf[5] = {
-      LEFT_MOTOR_REGISTER,
+  uint8_t buf[] = {
       Motor_Forward,
       speed,
       Motor_Reverse,
@@ -55,7 +54,7 @@ void maqueen_mbits_drive::drive_turnRight(uint8_t speed, uint8_t degrees, uint8_
   if (speed < 2)
     speed = 2;
 
-  uint8_t buf[4] = {
+  uint8_t buf[] = {
       Motor_Reverse,
       speed,
       Motor_Forward,
@@ -70,8 +69,7 @@ void maqueen_mbits_drive::maqueen_mbits_drive::drive_stop()
 
   uint8_t speed = 0;
 
-  uint8_t buf[5] = {
-      LEFT_MOTOR_REGISTER,
+  uint8_t buf[] = {
       Motor_Forward,
       speed,
       Motor_Forward,
