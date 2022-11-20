@@ -9,5 +9,4 @@ build
 .images
 *~
 Archive/**
-colcon.meta
-libmicroros.*
+libmicroros.sym
