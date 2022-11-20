@@ -4,6 +4,11 @@
 
 #include <string.h>
 
+#include <rcl/rcl.h>
+#include <rcl/error_handling.h>
+#include <rclc/rclc.h>
+#include <rclc/executor.h>
+
 #include "interfaces/if_ros_subscription.h"
 #include "interfaces/if_locomotion_drive.h"
 #include "interfaces/if_rtos.h"

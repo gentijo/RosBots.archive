@@ -1,10 +1,13 @@
 micro_ros_dev
 micro_ros_src
-esp32_toolchain.cmake
+esp32_toolchain.*
 *.a
+*.out
 ./include
 archive
 build
 .images
 *~
 Archive/**
+colcon.meta
+libmicroros.*

@@ -9,26 +9,16 @@
             "group": "none",
             "type": "shell",
             "options": {},
-<<<<<<< HEAD
             "command": "sh /opt/ros/ros_ws/agent/startAgent.sh",
             "problemMatcher": []
-=======
-            "command": "sh /opt/ros/ros_ws/agent/startAgent.sh"
->>>>>>> main
         },
         {
             "label": "Run TeleopKey",
             "group": "none",
             "type": "shell",
             "options": {},
-<<<<<<< HEAD
             "command": "sh /opt/ros/ros_ws/startTeleoop.sh",
             "problemMatcher": []
         }
-=======
-            "command": "sh /opt/ros/ros_ws/startTeleoop.sh"
-        }
-
->>>>>>> main
     ]
 }
