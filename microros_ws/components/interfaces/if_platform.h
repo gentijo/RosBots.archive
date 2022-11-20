@@ -1,6 +1,6 @@
 
-#ifndef _SENSOR_DATA_SRC_H_
-#define _SENSOR_DATA_SRC_H_
+#ifndef _IF_PLATFORM_H_
+#define _IF_PLATFORM_H_
 
 #include <stdint.h>
 

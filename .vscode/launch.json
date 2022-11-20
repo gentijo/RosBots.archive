@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/microros_ws/assemblies/esp32-range-buggy/build/range_buggy.elf",
+            "cwd": "${workspaceFolder}/microros_ws/assemblies/esp32-range-buggy/",
+            "miDebuggerPath": "/opt/esp/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gdb",
+            "setupCommands": [
+                { "text": "target remote 127.0.0.1:3333"},
+                { "text": "set remote hardware-watchpoint-limit 2"},
+                { "text": "monitor reset halt"},
+                { "text": "flushregs"}
+            ]
+        }
+    ],
+    "version": "2.0.0"
+}
