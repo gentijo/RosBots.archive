@@ -6,79 +6,38 @@
     "tasks": [{
         "label": "Configure",
         "type": "shell",
-        "command": ". opt/esp/esp-idf/export.sh && idf.py menuconfig",
+        "command": "source /opt/esp/idf/export.sh && idf.py menuconfig",
         "windows": { "command": "%userprofile%\\esp\\esp-idf\\export.bat && idf.py menuconfig" }
       },
       {
         "label": "Build",
         "group": "build",
         "type": "shell",
-        "command": ". $HOME/esp/esp-idf/export.sh && idf.py build",
-        "windows": { "command": "%userprofile%\\esp\\esp-idf\\export.bat && idf.py build" },
-        "problemMatcher": {
-          "owner": "cpp",
-          "fileLocation": ["relative", "${workspaceFolder}/build"],
-          "pattern": {
-            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-            "file": 1,
-            "line": 2,
-            "column": 3,
-            "severity": 4,
-            "message": 5
-          }
-        }
+        "command": "idf.py build",
       },
       {
         "label": "Get size",
         "group": "build",
         "type": "shell",
-        "command": ". $HOME/esp/esp-idf/export.sh && idf.py size",
-        "windows": { "command": "%userprofile%\\esp\\esp-idf\\export.bat && idf.py size" },
-        "problemMatcher": {
-          "owner": "cpp",
-          "fileLocation": ["relative", "${workspaceFolder}/build"],
-          "pattern": {
-            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-            "file": 1,
-            "line": 2,
-            "column": 3,
-            "severity": 4,
-            "message": 5
-          }
-        }
+        "command": "idf.py size",
       },
       {
         "label": "Clean",
         "group": "build",
         "type": "shell",
-        "command": ". $HOME/esp/esp-idf/export.sh && idf.py clean",
-        "windows": { "command": "%userprofile%\\esp\\esp-idf\\export.bat && idf.py clean" }
+        "command": "source /opt/esp/idf/export.sh && idf.py clean",
       },
       {
         "label": "Clean (full)",
         "group": "build",
         "type": "shell",
-        "command": ". $HOME/esp/esp-idf/export.sh && idf.py fullclean",
-        "windows": { "command": "%userprofile%\\esp\\esp-idf\\export.bat && idf.py fullclean" }
+        "command": "source /opt/esp/idf/export.sh && idf.py fullclean",
       },
       {
         "label": "Flash",
         "group": "test",
         "type": "shell",
-        "command": ". $HOME/esp/esp-idf/export.sh && idf.py flash",
-        "windows": { "command": "%userprofile%\\esp\\esp-idf\\export.bat && idf.py flash" },
-        "problemMatcher": {
-          "owner": "cpp",
-          "fileLocation": ["relative", "${workspaceFolder}/build"],
-          "pattern": {
-            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-            "file": 1,
-            "line": 2,
-            "column": 3,
-            "severity": 4,
-            "message": 5
-          }
-        }
+        "command": "source /opt/esp/idf/export.sh && idf.py fullclean",
       },
       {
         "label": "Erase flash",

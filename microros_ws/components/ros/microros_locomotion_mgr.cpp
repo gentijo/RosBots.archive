@@ -145,12 +145,12 @@ void microros_locomotion_mgr::locomotion_drive_task(void * arg)
 		}
 		else {		
 
-//			printf("Motor stop 1\n\r");
+			printf("Motor stop 1\n\r");
 
-//			microros_locomotion_mgr::s_loc_mgr->getDriveController()->drive_stop();
+			microros_locomotion_mgr::s_loc_mgr->getDriveController()->drive_stop();
 			usleep(100000);
 
-//			printf("Motor stop 2\n\r");
+			printf("Motor stop 2\n\r");
 
 			// int dist =  microros_locomotion_mgr::s_loc_mgr->getDriveController()->drive_readDistance();
 			// int speed = microros_locomotion_mgr::s_loc_mgr->getDriveController()->drive_readSpeed();

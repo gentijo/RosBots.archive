@@ -44,7 +44,7 @@ class esp_I2C : public if_I2C_driver {
 
         void       initialize(uint8_t _i2c_port, bool host_mode);
 
-        int8_t     readBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *data, uint16_t timeout) { return 0; };
+        int8_t     readBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *data, uint16_t timeout);
         bool       writeBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *data);
         bool       selectRegister(uint8_t devAddr, uint8_t regAddr);
 
