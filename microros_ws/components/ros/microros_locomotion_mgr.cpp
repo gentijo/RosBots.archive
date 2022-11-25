@@ -2,25 +2,18 @@
 #include "microros_locomotion_mgr.h"
 
 
-microros_app* 				microros_locomotion_mgr::s_uros_app=NULL;
 microros_locomotion_mgr*	microros_locomotion_mgr::s_loc_mgr=NULL;
-if_RTOS* 					microros_locomotion_mgr::s_rtos=NULL;
 
 
-
-
-void microros_locomotion_mgr::attach(microros_app *uros_app, if_RTOS *rtos)
+void microros_locomotion_mgr::attach()
 {
 	microros_locomotion_mgr::s_loc_mgr = this;
 
-	microros_locomotion_mgr::s_uros_app = uros_app;
-	microros_locomotion_mgr::s_rtos = rtos;
-
 	microros_locomotion_mgr::s_loc_mgr->m_locomotionCmdQueue = 
-	 	microros_locomotion_mgr::s_rtos->queue_create( 10, sizeof( struct LocomotionCmd ) );
+	 	g_ros_app->get_RTOS()->queue_create( 10, sizeof( struct LocomotionCmd ) );
 
 	printf("Creating locomotion reader task\r\n");
-	microros_locomotion_mgr::s_rtos->create_task(
+		g_ros_app->get_RTOS()->create_task(
 		microros_locomotion_mgr::locomotion_drive_task,
 		"locomotion_drive_task",
 		CONFIG_MICRO_ROS_APP_STACK,
@@ -29,20 +22,20 @@ void microros_locomotion_mgr::attach(microros_app *uros_app, if_RTOS *rtos)
 		NULL);
 
 	char full_name[40] = "";
-	strcpy(full_name, microros_locomotion_mgr::s_uros_app->get_Node_Name());
+	strcpy(full_name, g_ros_app->get_MicrorosApp()->get_Node_Name());
 	strcat(full_name, "/cmd_vel");
 
 	printf("Init command velocity subscription Name=%s\r\n", full_name);
 	RCCHECK(rclc_subscription_init_default(
 	 	&microros_locomotion_mgr::s_loc_mgr->m_velocity_subscription,
-		microros_locomotion_mgr::s_uros_app->get_ROS_Node(),
+		g_ros_app->get_MicrorosApp()->get_ROS_Node(),
 		ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
 		full_name)
 	);
 
 	printf("Add command velocity subscription\r\n");
 	RCCHECK(rclc_executor_add_subscription(
-		microros_locomotion_mgr::s_uros_app->get_ROS_Executor(), 
+		g_ros_app->get_MicrorosApp()->get_ROS_Executor(), 
 		&microros_locomotion_mgr::s_loc_mgr->m_velocity_subscription, 
 		&microros_locomotion_mgr::s_loc_mgr->m_velocity_msg, 
 		&microros_locomotion_mgr::sub_velocity_callback, ON_NEW_DATA));
@@ -52,14 +45,13 @@ void microros_locomotion_mgr::attach(microros_app *uros_app, if_RTOS *rtos)
 void microros_locomotion_mgr::release()
 {
 	// Free resources.
-	RCCHECK(rcl_subscription_fini(&microros_locomotion_mgr::s_loc_mgr->m_velocity_subscription, microros_locomotion_mgr::s_uros_app->get_ROS_Node()));
+	RCCHECK(rcl_subscription_fini(&microros_locomotion_mgr::s_loc_mgr->m_velocity_subscription, g_ros_app->get_MicrorosApp()->get_ROS_Node()));
 }
 
 
 void microros_locomotion_mgr::sub_velocity_callback(const void *msgin)
 {
 	const geometry_msgs__msg__Twist *vel = (const geometry_msgs__msg__Twist *)msgin;
-
 
 	printf("Received: velocity linear [%f %f %f] angular [%f %f %f]\r\n", 
 	vel->linear.x, vel->linear.y,vel->linear.z, 
@@ -83,7 +75,7 @@ void microros_locomotion_mgr::sub_velocity_callback(const void *msgin)
 			cmd.duration = abs(vel->angular.z) * 100;
 			cmd.speed = 50;
 			
-			microros_locomotion_mgr::s_rtos->queue_send( 
+			g_ros_app->get_RTOS()->queue_send( 
 				microros_locomotion_mgr::s_loc_mgr->m_locomotionCmdQueue, 
 				( void * ) &cmd, ( TickType_t ) 0 );
 		}
@@ -95,7 +87,7 @@ void microros_locomotion_mgr::sub_velocity_callback(const void *msgin)
 			cmd.duration = abs(vel->linear.x) * 100;
 			cmd.speed = 50;
 
-			microros_locomotion_mgr::s_rtos->queue_send( 
+			g_ros_app->get_RTOS()->queue_send( 
 				microros_locomotion_mgr::s_loc_mgr->m_locomotionCmdQueue, 
 				( void * ) &cmd, ( TickType_t ) 0 );
 		}
@@ -109,7 +101,8 @@ void microros_locomotion_mgr::locomotion_drive_task(void * arg)
 	while(1) {
 
 		struct LocomotionCmd cmd;
-		if (microros_locomotion_mgr::s_rtos->queue_receive(
+
+		if (g_ros_app->get_RTOS()->queue_receive(
 			microros_locomotion_mgr::s_loc_mgr->m_locomotionCmdQueue, ( void * ) &cmd, 
 			( TickType_t ) 500 / portTICK_PERIOD_MS)) {
 

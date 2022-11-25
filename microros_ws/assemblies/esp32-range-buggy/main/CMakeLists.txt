@@ -1,6 +1,6 @@
 idf_component_register(
-    SRCS "main.cpp" 
-        "../../../components/app/app_os/microros_app.cpp"
+    SRCS "ros_app.cpp" 
+        "../../../components/app/ros/microros_app_base.cpp"
         "../../../components/app/platform/esp32_idf_app.cpp"
         "../../../components/app/rtos/freertos_app.cpp"
         "../../../components/ros/microros_timer_mgr.cpp"

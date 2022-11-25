@@ -1,27 +1,28 @@
 
-#ifndef  __ROS_TIMER_MGR__
-#define  __ROS_TIMER_MGR__
+#ifndef  __ROS_TIMER_BASE__
+#define  __ROS_TIMER_BASE__
 
 #include "interfaces/if_ros_subscription.h"
-#include "app/app_os/microros_app.h"
+#include "interfaces/if_microros_app.h"
+#include "interfaces/if_ros_app.h"
+
+
+typedef void(*timer_function_t)(rcl_timer_t *timer, int64_t last_call_time);
 
 class microros_timer_mgr : public if_ros_subscription {
     public:
-        microros_timer_mgr();
-        void attach(microros_app *uros_app, if_RTOS *rtos);
+        microros_timer_mgr( timer_function_t callback, unsigned int period  ) {
+                m_timer_callback = callback;
+                m_timer_period = period; 
+        };
+
+        void attach();
         void release();
 
-    private:
-        static void             timer_callback(rcl_timer_t *timer, int64_t last_call_time);
-        static microros_app*    s_uros_app;
-        static if_RTOS*		    s_rtos;  
-
-
-
-        // Create timer.
+    private:        
         rcl_timer_t m_timer;
-        unsigned int m_timer_timeout = 1000;
-        unsigned int m_rcl_wait_timeout = 1000;   // in ms
+        timer_function_t m_timer_callback;
+        int m_timer_period;
 
 };
 

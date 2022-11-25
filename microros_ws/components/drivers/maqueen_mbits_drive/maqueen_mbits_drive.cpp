@@ -1,5 +1,4 @@
 #include "maqueen_mbits_drive.h"
-#include "drivers/esp_I2Cdev/esp_I2Cdev.h"
 
 
 #define I2C_DEFAULT_TIMEOUT 100
