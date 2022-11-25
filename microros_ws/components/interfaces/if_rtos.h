@@ -28,6 +28,8 @@ typedef TickType_t rtos_tick_type_t;
 class if_RTOS {
 
     public:
+        virtual void init ()=0;
+        
        virtual rtos_base_type_t create_task(
             rtos_task_func_t taskFunction, const char *name, rtos_ubase_type_t stackDepth, 
             void *parameters, rtos_ubase_type_t priority, rtos_task_handle_t *task_handle

@@ -7,11 +7,10 @@
 class freertos_app : public if_RTOS {
 
     public:
-        freertos_app();
-        
+        freertos_app() {}
+
         void init();
 
-    public:
        rtos_base_type_t create_task(
             rtos_task_func_t taskFunction, const char *name, rtos_ubase_type_t usStackDepth, 
             void *parameters, rtos_ubase_type_t priority, rtos_task_handle_t *task_handle

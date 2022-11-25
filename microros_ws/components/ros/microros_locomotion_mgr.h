@@ -12,8 +12,10 @@
 #include "interfaces/if_ros_subscription.h"
 #include "interfaces/if_locomotion_drive.h"
 #include "interfaces/if_rtos.h"
+#include "interfaces/if_microros_app.h"
 
-#include "app/app_os/microros_app.h"
+#include "interfaces/if_ros_app.h"
+
 #include "geometry_msgs/msg/twist.h"
 
 enum direction_t {
@@ -39,7 +41,7 @@ class microros_locomotion_mgr : public if_ros_subscription {
             printf("Locomotion mgr create");
         };
 
-        void attach(microros_app *uros_app, if_RTOS *rtos);
+        void attach();
         void release();
 
         microros_locomotion_mgr     *setDriveController( if_locomotion_drive *driveCtrl) {
@@ -62,9 +64,7 @@ class microros_locomotion_mgr : public if_ros_subscription {
 
     private:
         rtos_queue_handle_t             m_locomotionCmdQueue;
-        static microros_app             *s_uros_app;
         static microros_locomotion_mgr  *s_loc_mgr;
-        static if_RTOS                  *s_rtos;
 
         static void                 locomotion_drive_task(void * arg);
 	    static void                 sub_velocity_callback(const void *msgin);
