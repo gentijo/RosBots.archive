@@ -13,6 +13,8 @@
 #include <rclc/executor.h>
 
 #include "interfaces/if_ros_subscription.h"
+#include "interfaces/if_ros_publisher.h"
+
 #include "interfaces/if_rtos.h"
 #include "interfaces/if_microros_app.h"
 #include "interfaces/if_ros_app.h"
@@ -48,7 +50,7 @@ class microros_app_base : public if_microros_app {
         char*                   get_Node_Namespace(){return m_namespace;};
 
 
-        rcl_publisher_t*    createPublisherForTopic(const char * topic_name, const rosidl_message_type_support_t * type_support, bool bestEffort = false);
+        rcl_publisher_t*    add_ros_publisher(if_ros_publisher* pub);
         void                publishMessage(const char * topic_name, const void * message);
         void                publishMessage(rcl_publisher_t* publisher, const void * message);
 

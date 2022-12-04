@@ -40,3 +40,4 @@ if_I2C_driver* esp32_idf_app::getI2CHostDriver() {
     printf("\r\nGet I2C Driver %p on PLatform %p\r\n",m_i2c_host_driver, this);
     return m_i2c_host_driver;
 }
+
