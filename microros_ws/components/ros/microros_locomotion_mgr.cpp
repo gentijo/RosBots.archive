@@ -9,7 +9,7 @@ void microros_locomotion_mgr::attach()
 {
 	microros_locomotion_mgr::s_loc_mgr = this;
 
-	microros_locomotion_mgr::s_loc_mgr->m_locomotionCmdQueue = 
+	m_locomotionCmdQueue = 
 	 	g_ros_app->get_RTOS()->queue_create( 10, sizeof( struct LocomotionCmd ) );
 
 	printf("Creating locomotion reader task\r\n");
@@ -27,7 +27,7 @@ void microros_locomotion_mgr::attach()
 
 	printf("Init command velocity subscription Name=%s\r\n", full_name);
 	RCCHECK(rclc_subscription_init_default(
-	 	&microros_locomotion_mgr::s_loc_mgr->m_velocity_subscription,
+	 	&m_velocity_subscription,
 		g_ros_app->get_MicrorosApp()->get_ROS_Node(),
 		ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
 		full_name)
@@ -36,16 +36,16 @@ void microros_locomotion_mgr::attach()
 	printf("Add command velocity subscription\r\n");
 	RCCHECK(rclc_executor_add_subscription(
 		g_ros_app->get_MicrorosApp()->get_ROS_Executor(), 
-		&microros_locomotion_mgr::s_loc_mgr->m_velocity_subscription, 
-		&microros_locomotion_mgr::s_loc_mgr->m_velocity_msg, 
-		&microros_locomotion_mgr::sub_velocity_callback, ON_NEW_DATA));
+		&m_velocity_subscription, 
+		&m_velocity_msg, 
+		&sub_velocity_callback, ON_NEW_DATA));
 
 }
 
 void microros_locomotion_mgr::release()
 {
 	// Free resources.
-	RCCHECK(rcl_subscription_fini(&microros_locomotion_mgr::s_loc_mgr->m_velocity_subscription, g_ros_app->get_MicrorosApp()->get_ROS_Node()));
+	RCCHECK(rcl_subscription_fini(&m_velocity_subscription, g_ros_app->get_MicrorosApp()->get_ROS_Node()));
 }
 
 

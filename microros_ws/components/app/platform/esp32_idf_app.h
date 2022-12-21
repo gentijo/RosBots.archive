@@ -10,6 +10,8 @@
 #include "interfaces/if_I2C_driver.h"
 #include "interfaces/if_platform.h"
 #include "drivers/esp_I2C/esp_i2c.h"
+#include "interfaces/if_ros_publisher.h"
+#include "interfaces/if_ros_subscription.h"
 
 #include "network_interfaces/uros_network_interfaces.h"
 

@@ -21,32 +21,35 @@ void microros_app_base::add_ros_subscription(if_ros_subscription* sub) {
 	}
 }
 
-rcl_publisher_t* microros_app_base::createPublisherForTopic(const char * topic_name, const rosidl_message_type_support_t * type_support, bool bestEffort) {
+rcl_publisher_t* microros_app_base::add_ros_publisher(if_ros_publisher* pub) {
 
 	// Publisher object
-	rcl_publisher_t* publisher = new rcl_publisher_t();
+	rcl_publisher_t* rcl_publisher = new rcl_publisher_t();
 
+	const char* topic_name = pub->getTopicName();
 	if (m_publishers.find(topic_name) == m_publishers.end())
     {
-    	m_publishers[topic_name] = publisher;
+     	m_publishers[topic_name] = rcl_publisher;
     }
 	else
 	{
 		printf("Topic already defined, reusing");
-		return m_publishers[topic_name];
+	 	return m_publishers[topic_name];
 	}
 
+	const rosidl_message_type_support_t *type_support = pub->get_IDL_MessageType();
+
 	rcl_ret_t rc; 
-	if (bestEffort) {
+	if (pub->isBestEffort()) {
 		// Creates a best effort rcl publisher
 		rc = rclc_publisher_init_best_effort(
-  		publisher, &m_node,
-  		type_support, topic_name);
+  			rcl_publisher, &m_node,
+  			type_support, topic_name);
 
 	} else {
-		// Creates a reliable rcl publisher
+	 	// Creates a reliable rcl publisher
 		rc = rclc_publisher_init_default(
-  			publisher, &m_node,
+  			rcl_publisher, &m_node,
   			type_support, topic_name);
 
 	}
@@ -57,7 +60,10 @@ rcl_publisher_t* microros_app_base::createPublisherForTopic(const char * topic_n
   		return NULL;
 	}
 
-	return publisher;
+	pub->attach();
+
+	return rcl_publisher;
+
 }
 
 void microros_app_base::publishMessage(const char * topic_name, const void * message) {
