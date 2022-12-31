@@ -65,7 +65,13 @@
         "streambuf": "cpp",
         "thread": "cpp",
         "typeinfo": "cpp",
-        "ringbuf.h": "c"
+        "ringbuf.h": "c",
+        "objstr.h": "c",
+        "mpversion.h": "c",
+        "moduplatform.h": "c",
+        "mpconfig.h": "c",
+        "mphal.h": "c",
+        "mphalport.h": "c"
     },
     "cmake.configureOnOpen": false,
     "cmake.sourceDirectory": "${workspaceFolder}/assemblies/esp32-joystick"

@@ -3,4 +3,6 @@ idf_component_register(
 
     INCLUDE_DIRS 
         "./"
+        ${MICROPY_DIR}
 )
+
