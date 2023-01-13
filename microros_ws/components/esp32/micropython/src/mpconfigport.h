@@ -19,6 +19,12 @@
 #define MICROPY_ALLOC_PATH_MAX            (256)
 #define MICROPY_ALLOC_PARSE_CHUNK_INIT    (16)
 
+#define MICROPY_LONGINT_IMPL              (2)
+#define MPZ_DIG_SIZE                      (16)
+#define MICROPY_FLOAT_IMPL (MICROPY_FLOAT_IMPL_FLOAT)
+#define MICROPY_PY_BUILTINS_COMPLEX       (1)
+#define MICROPY_PY_BUILTINS_FLOAT         (1)
+
 // type definitions for the specific machine
 
 typedef intptr_t mp_int_t; // must be pointer size

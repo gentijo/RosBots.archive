@@ -3,17 +3,19 @@ cmake_minimum_required(VERSION 3.5)
 get_filename_component(PROJECT_DIR "./" ABSOLUTE)
 message("Project Dir is ${PROJECT_DIR}")  
 
-set (EXTRA_COMPONENT_DIRS  "./../../")
+get_filename_component(COMPONENT_DIR "./../../." ABSOLUTE)
+message("Component Dir is ${COMPONENT_DIR}")  
+
+set (EXTRA_COMPONENT_DIRS ${COMPONENT_DIR} )
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 
 # Define the output sdkconfig so it goes in the build directory.
-set(SDKCONFIG ${CMAKE_BINARY_DIR}/sdkconfig)
+#set(SDKCONFIG ${CMAKE_BINARY_DIR}/sdkconfig)
 
-
-set(SDK_CONFIG_FILE_IN  ${PROJECT_DIR}/sdkconfig.defaults)
-set(SDK_CONFIG_FILE     ${PROJECT_DIR}/sdkconfig.combined)
-set(SDK_CONFIG_FILE_BUILD     ${CMAKE_BINARY_DIR}/sdkconfig.combined)
+set(SDK_CONFIG_FILE_IN          ${PROJECT_DIR}/sdkconfig.defaults)
+set(SDK_CONFIG_FILE             ${PROJECT_DIR}/sdkconfig.combined)
+set(SDK_CONFIG_FILE_BUILD       ${CMAKE_BINARY_DIR}/sdkconfig.combined)
 
 # Concatenate all sdkconfig files into a combined one for the IDF to use.
 #file(WRITE ${SDK_CONFIG_FILE} "")
@@ -26,7 +28,7 @@ set(SDK_CONFIG_FILE_BUILD     ${CMAKE_BINARY_DIR}/sdkconfig.combined)
 
 #configure_file(${SDK_CONFIG_FILE_IN} ${SDK_CONFIG_FILE_BUILD} )
 
-#set(SDKCONFIG_DEFAULTS ${SDK_CONFIG_FILE_BUILD})
+#set(SDK_CONFIG_DEFAULTS ${SDK_CONFIG_FILE_BUILD})
 
 project(mptest)
 

@@ -86,7 +86,9 @@
 			"mphalport.h": "c",
 			"runtime.h": "c",
 			"mperrno.h": "c",
-			"root_pointers.h": "c"
+			"root_pointers.h": "c",
+			"builtin.h": "c",
+			"uart.h": "c"
 		}
 	}
 }

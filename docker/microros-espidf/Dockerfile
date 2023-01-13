@@ -15,18 +15,18 @@ COPY ./install_micro_ros_deps_script.sh /install_micro_ros_deps_script.sh
 
 RUN mkdir -p /tmp/install_micro_ros_deps_script
 RUN mv /install_micro_ros_deps_script.sh /tmp/install_micro_ros_deps_script/ 
-# RUN /tmp/install_micro_ros_deps_script/install_micro_ros_deps_script.sh 
+RUN /tmp/install_micro_ros_deps_script/install_micro_ros_deps_script.sh 
 # rm -rf /var/lib/apt/lists/*
 	
 RUN apt -y update
 RUN apt -y upgrade
 RUN apt -y install -y telnet
 
-#ARG USER_ID=espidf
+ARG USER_ID=espidf
 
-#RUN useradd --create-home --home-dir /home/$USER_ID --shell /bin/bash --user-group --groups adm,sudo $USER_ID && \
-#    echo $USER_ID:$USER_ID | chpasswd && \
-#    echo "$USER_ID ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN useradd --create-home --home-dir /home/$USER_ID --shell /bin/bash --user-group --groups adm,sudo $USER_ID && \
+    echo $USER_ID:$USER_ID | chpasswd && \
+    echo "$USER_ID ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
     
 RUN echo "source /opt/esp/idf/export.sh" >> /root/.bashrc 
-#USER $USER_ID
+USER $USER_ID
