@@ -9,6 +9,12 @@ message("Component Dir is ${COMPONENT_DIR}")
 set (EXTRA_COMPONENT_DIRS ${COMPONENT_DIR} )
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+#include($ENV{IDF_PATH}/tools/cmake/component.cmake)
+#include($ENV{IDF_PATH}/tools/cmake/idf.cmake)
+#include($ENV{IDF_PATH}/tools/cmake/targets.cmake)
+#include($ENV{IDF_PATH}/tools/cmake/utilities.cmake)
+
+include(ExternalProject )
 
 # Define the output sdkconfig so it goes in the build directory.
 #set(SDKCONFIG ${CMAKE_BINARY_DIR}/sdkconfig)

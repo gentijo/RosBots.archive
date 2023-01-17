@@ -14,3 +14,9 @@ idf_component_register (
         "../../include"
         "../../../components"
 )
+
+INCLUDE_DIRECTORIES(
+    PUBLIC
+        ../../../micro_ros_src/src/rcl/rcl/include
+        ../../../micro_ros_src/src/rcutils/include
+)
