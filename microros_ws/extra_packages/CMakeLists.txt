@@ -1,11 +1,14 @@
+
+
 idf_component_register(
     SRCS 
-     "components/network_interfaces/uros_ethernet_netif.c" 
-     "components/network_interfaces/uros_wlan_netif.c"
+     "../components/network_interfaces/uros_ethernet_netif.c" 
+     "../components/network_interfaces/uros_wlan_netif.c"
     
      REQUIRES 
         nvs_flash 
 )
+
 
 if(CMAKE_GENERATOR STREQUAL "Unix Makefiles")
 set(submake "$(MAKE)")

@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.5)
 get_filename_component(PROJECT_DIR "./" ABSOLUTE)
 message("Project Dir is ${PROJECT_DIR}")  
 
-get_filename_component(COMPONENT_DIR "./../../." ABSOLUTE)
+get_filename_component(COMPONENT_DIR "./../../extra_packages" ABSOLUTE)
 message("Component Dir is ${COMPONENT_DIR}")  
 
 set (EXTRA_COMPONENT_DIRS ${COMPONENT_DIR} )
