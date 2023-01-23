@@ -5,9 +5,6 @@
 		},
 		{
 			"path": "../esp/idf"
-		},
-		{
-			"path": "microros_ws/extern/micropython"
 		}
 	],
 	"settings": {

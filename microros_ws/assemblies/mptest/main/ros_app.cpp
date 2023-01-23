@@ -5,13 +5,16 @@
 
 #include "ros_app.h"
 
-// #include "py/builtin.h"
-// #include "py/compile.h"
-// #include "py/runtime.h"
-// #include "py/repl.h"
-// #include "py/gc.h"
-// #include "py/mperrno.h"
-// #include "shared/runtime/pyexec.h"
+extern "C" {
+#include "py/builtin.h"
+#include "py/compile.h"
+#include "py/runtime.h"
+#include "py/repl.h"
+#include "py/gc.h"
+#include "py/mperrno.h"
+#include "shared/runtime/pyexec.h"
+}
+void run_Python(void);
 
 
 if_ros_app* g_ros_app;
@@ -32,7 +35,7 @@ void ros_app::initialize() {
     m_rtos->init();
     m_platform->init();
     init();
-  
+
     printf("\r\nInit Subsystems Done");
 
 };
@@ -44,11 +47,12 @@ void system_timer_callback(rcl_timer_t *timer, int64_t last_call_time)
 
 void ros_app::ROS_init_ok() {
     printf("\r\nROS Init OK\r\n");
+    run_Python();
 
-    add_ros_subscription(new microros_timer_mgr(system_timer_callback, 1000));
+//    add_ros_subscription(new microros_timer_mgr(system_timer_callback, 1000));
 }
 
-/* 
+
 #if MICROPY_ENABLE_COMPILER
 void do_str(const char *src, mp_parse_input_kind_t input_kind) {
     nlr_buf_t nlr;
@@ -74,11 +78,15 @@ static char heap[2048];
 void run_Python(void) {
     int stack_dummy;
     stack_top = (char *)&stack_dummy;
+    printf("\r\nMP 1\r\n");
 
     #if MICROPY_ENABLE_GC
     gc_init(heap, heap + sizeof(heap));
     #endif
     mp_init();
+
+    printf("\r\nMP 2\r\n");
+
     #if MICROPY_ENABLE_COMPILER
     #if MICROPY_REPL_EVENT_DRIVEN
     pyexec_event_repl_init();
@@ -89,14 +97,20 @@ void run_Python(void) {
         }
     }
     #else
-    pyexec_friendly_repl();
+//    pyexec_friendly_repl();
     #endif
+
+    printf("\r\nMP 3\r\n");
+
     do_str("print('hello world!', list(x+1 for x in range(10)), end='eol\\n')", MP_PARSE_SINGLE_INPUT);
     do_str("for i in range(10):\r\n  print(i)", MP_PARSE_FILE_INPUT);
     #else
     pyexec_frozen_module("frozentest.py");
     #endif
     mp_deinit();
+    printf("\r\nMP 4\r\n");
+
+
 }
 
 #if MICROPY_ENABLE_GC
@@ -138,4 +152,4 @@ void MP_WEAK __assert_func(const char *file, int line, const char *func, const c
 }
 #endif
 
- */
+ 

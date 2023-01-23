@@ -11,12 +11,16 @@ idf_component_register (
 
     INCLUDE_DIRS 
         "./"
-        "../../include"
+        "../../../include"
         "../../../components"
+        "../../../libs/micropython/"
+        "../../../extra_packages/micropython/src"
+#        "../../../extra_packages/microros/micro_ros_src/src/rcl/rcl/include"
+#        "../../../extra_packages/microros/micro_ros_src/src/rcutils/include"
+        ${CMAKE_BINARY_DIR}
+
+        
+    REQUIRES 
+ #       micropython 
 )
 
-INCLUDE_DIRECTORIES(
-    PUBLIC
-        ../../../micro_ros_src/src/rcl/rcl/include
-        ../../../micro_ros_src/src/rcutils/include
-)
