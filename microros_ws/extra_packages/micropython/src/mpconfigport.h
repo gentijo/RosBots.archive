@@ -54,3 +54,5 @@ typedef long mp_off_t;
 #if CONFIG_IDF_TARGET_ESP32C3
 #define MICROPY_GCREGS_SETJMP               (1)
 #endif
+
+#define MICROPY_PY_WEBREPL                  (1)

@@ -97,7 +97,7 @@ void run_Python(void) {
         }
     }
     #else
-//    pyexec_friendly_repl();
+    pyexec_friendly_repl();
     #endif
 
     printf("\r\nMP 3\r\n");

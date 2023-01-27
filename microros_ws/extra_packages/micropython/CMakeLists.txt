@@ -82,6 +82,9 @@ set(MICROPY_SOURCE_SHARED
     ${MICROPY_DIR}/shared/runtime/stdout_helpers.c
     ${MICROPY_DIR}/shared/runtime/sys_stdio_mphal.c
     ${MICROPY_DIR}/shared/runtime/pyexec.c
+
+#    ${MICROPY_DIR}/extmod/modwebrepl.c
+
 )
 
 set(MICROPY_SOURCE_LIB
@@ -102,7 +105,8 @@ set(MICROPY_SOURCE_DRIVERS
 #    ${MICROPY_DIR}/drivers/dht/dht.c
     ${MICROPY_PORT_DIR}/uart_core.c
     ${MICROPY_PORT_DIR}/mpthreadport.c
-
+    
+#    ${MICROPY_PORT_DIR}/mpmain.c
 )
 
 set(MICROPY_SOURCE_QSTR
@@ -161,7 +165,7 @@ idf_component_register(
         ${CMAKE_BINARY_DIR}
     REQUIRES
         ${IDF_COMPONENTS}
-
+        nvs_flash 
 )
 
 INCLUDE_DIRECTORIES(AFTER 

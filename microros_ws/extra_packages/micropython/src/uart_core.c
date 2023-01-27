@@ -23,6 +23,9 @@ typedef struct {
 // Receive single character
 int mp_hal_stdin_rx_chr(void) {
     unsigned char c = 0;
+    scanf("%c",&c);
+    // Convert new lines to cr
+    if (c == 0x0a) c=0x0d;
     return c;
 }
 
