@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.2.2:1", "", "matching", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA2/EA2/EA751.htm", "175.png", "223", "0", "", "Logical diagram0","{1BA73B05-CF22-45bf-85BF-2D120BF6CF78}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.2.2:2", "", "matching_internal", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA2/EA2/EA754.htm", "5.png", "E1390", "0", "", "Class0","{51D47A3B-971A-4f7a-8459-FEBDBCC10983}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.2.2:3", "", "«typedef» hash_int_t", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA2/EA2/EA755.htm", "5.png", "E1389", "E1390", "", "Class0","{15AB43BC-FC27-4ed6-B96F-50C9FD1E3A03}");

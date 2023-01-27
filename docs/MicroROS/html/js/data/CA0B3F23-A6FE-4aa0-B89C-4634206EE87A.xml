@@ -1,0 +1,8 @@
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.1.3:1", "", "session", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA1/EA3/EA714.htm", "175.png", "218", "0", "", "Logical diagram0","{C0D9F3E2-EEFC-4ccd-8F3C-7CA51C8FC68F}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.1.3:2", "", "common_create_entities_internal", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA1/EA3/EA717.htm", "5.png", "E1377", "0", "", "Class0","{21D39B62-3927-4ffd-BB5D-CD3B3FE477FB}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.1.3:3", "", "session_info_internal", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA1/EA3/EA718.htm", "5.png", "E1378", "0", "", "Class0","{2A27D0EC-ECA4-4125-86E0-1D4DE0422343}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.1.3:4", "", "session_internal", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA1/EA3/EA719.htm", "5.png", "E1379", "0", "", "Class0","{A3034586-5CC7-4627-AF93-F55151662BE2}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.1.3:5", "", "submessage_internal", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA1/EA3/EA721.htm", "5.png", "E1382", "0", "", "Class0","{0706FB80-E329-49f0-920E-258412384C2C}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.1.3:6", "", "SubmessageFlags", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA1/EA3/EA722.htm", "247.png", "E1381", "E1382", "", "Enumeration0","{56D5F956-CBE1-4b25-9C3E-F33109ECAE75}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.1.3:7", "", "SubmessageId", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA1/EA3/EA723.htm", "247.png", "E1380", "E1382", "", "Enumeration0","{226BB5BF-379F-45ff-9934-F72FBF489D35}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.1.3.1", "1", "stream", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA1/EA3/EA1/EA726.htm", "4.png", "", "", "{DB66A561-AE4E-475b-B7EA-DE339EC7383B}", "Package");

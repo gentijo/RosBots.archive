@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>rcutils</title>
+<link href="../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../../../../../../../js/displayToc.js" type="text/javascript"></script>
+<script>
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
+}
+
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
+</script>
+<style>
+
+</style>
+</head>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> rcutils </h1>
+			<!-- <img class="header_image" src="../../../../../../../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../../../../../../../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="../../../../../../../index.htm">Model</a> / <a href="../../../../../EA73.htm">library</a> / <a href="../../../../EA273.htm">MicroROS</a> / <a href="../../../EA277.htm">src</a> / <a href="../../EA1200.htm">rcutils</a> / <a href="../EA1206.htm">include</a> / <a href="EA1210.htm">rcutils</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<li><img src="../../../../../../../images/4.png" alt="Package"/> <a href="./EA1/EA1249.htm">stdatomic_helper</a></li>
+<li><img src="../../../../../../../images/4.png" alt="Package"/> <a href="./EA2/EA1267.htm">testing</a></li>
+<li><img src="../../../../../../../images/4.png" alt="Package"/> <a href="./EA3/EA1271.htm">types</a></li>
+<li><img src="../../../../../../../images/175.png" alt="Diagram"/> <a href="EA1208.htm">rcutils</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1211.htm">allocator</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1212.htm">cmdline_parser</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1213.htm">env</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1214.htm">error_handling</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1215.htm">filesystem</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1216.htm">find</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1217.htm">format_string</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1218.htm">get_env</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1219.htm">isalnum_no_locale</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1220.htm">logging</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1221.htm">macros</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1222.htm">process</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1223.htm">qsort</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1224.htm">repl_str</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1225.htm">security_directory</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1226.htm">shared_library</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1227.htm">snprintf</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1228.htm">split</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1230.htm">stdatomic_helper</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1231.htm">strcasecmp</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1232.htm">strdup</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1233.htm">strerror</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1235.htm">time</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1237.htm">types</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1238.htm">visibility_control</a></li>
+<li><img src="../../../../../../../images/5.png" alt="Class"/> <a href="EA1239.htm">visibility_control_macros</a></li>
+</ul>
+
+					</td>
+					<td class="contentcell"><div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">rcutils  : Public   Package</span>
+	<table border="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">1/25/2023 12:37:47 PM</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">1/25/2023 12:37:47 PM</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../../../../../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">gentijo</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" >Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../../../../../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{68ECAAA1-4BA6-4bba-9E53-03A6E5C40F11}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+	</table>
+	
+ </div>
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
+</body>
+</html>
+

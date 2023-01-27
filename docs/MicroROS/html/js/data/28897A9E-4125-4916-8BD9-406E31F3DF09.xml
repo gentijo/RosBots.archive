@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.2.2.1.6.3:1", "", "rclc_lifecycle", "EARoot/EA2/EA2/EA1/EA6/EA3/EA1142.htm", "175.png", "266", "0", "", "Logical diagram0","{185B8D52-149A-40cc-B563-631C3B44D7EB}");
+tocTab[tocTab.length] = new Array("0.2.2.1.6.3.1", "1", "include", "EARoot/EA2/EA2/EA1/EA6/EA3/EA1/EA1148.htm", "4.png", "", "", "{15163CCF-81C6-4124-AF6A-FF69582CA1C4}", "Package");

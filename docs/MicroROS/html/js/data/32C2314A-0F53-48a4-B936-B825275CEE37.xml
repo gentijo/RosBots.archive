@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.1:1", "", "core", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA1/EA699.htm", "175.png", "215", "0", "", "Logical diagram0","{DD4E5333-7AA0-414a-936E-30BF3E138BA3}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.1.1", "1", "log", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA1/EA1/EA707.htm", "4.png", "", "", "{0B0F880B-C342-4316-923C-3EF9E351A708}", "Package");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.1.2", "1", "serialization", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA1/EA2/EA711.htm", "4.png", "", "", "{EA51E3BD-76B2-4421-8123-323B2364D9B7}", "Package");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.3.1.1.3", "1", "session", "EARoot/EA2/EA2/EA1/EA2/EA3/EA1/EA1/EA3/EA716.htm", "4.png", "", "", "{CA0B3F23-A6FE-4aa0-B89C-4634206EE87A}", "Package");
