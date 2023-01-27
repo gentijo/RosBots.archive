@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("0.2.2.1.1.1.1:1", "", "ucdr", "EARoot/EA2/EA2/EA1/EA1/EA1/EA1/EA301.htm", "175.png", "177", "0", "", "Logical diagram0","{053AD263-DFAC-45ba-B5EA-4CC98E166B30}");
+tocTab[tocTab.length] = new Array("0.2.2.1.1.1.1:2", "", "microcdr", "EARoot/EA2/EA2/EA1/EA1/EA1/EA1/EA304.htm", "5.png", "E1080", "0", "", "Class0","{1B67BCFB-E52A-4cdc-A95A-2AC086402F3F}");
+tocTab[tocTab.length] = new Array("0.2.2.1.1.1.1:3", "", "visibility", "EARoot/EA2/EA2/EA1/EA1/EA1/EA1/EA305.htm", "5.png", "E1081", "0", "", "Class0","{E5997D20-1689-4be2-A668-301DA720B813}");
+tocTab[tocTab.length] = new Array("0.2.2.1.1.1.1:4", "", "«struct» ucdrBuffer", "EARoot/EA2/EA2/EA1/EA1/EA1/EA1/EA306.htm", "5.png", "E1079", "E1080", "", "Class0","{05F276C6-0666-49d5-BBF9-0D1149E3D343}");
+tocTab[tocTab.length] = new Array("0.2.2.1.1.1.1:5", "", "ucdrEndianness", "EARoot/EA2/EA2/EA1/EA1/EA1/EA1/EA307.htm", "247.png", "E1078", "E1080", "", "Enumeration0","{BE2E3F0D-A9EB-4930-A913-F558E2E4137C}");

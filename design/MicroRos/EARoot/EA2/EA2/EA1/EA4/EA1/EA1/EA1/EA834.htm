@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>rcl::expand_topic_name</title>
+<link href="../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../../../../../../../../js/displayToc.js" type="text/javascript"></script>
+<script>
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
+}
+
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
+</script>
+<style>
+
+</style>
+</head>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> rcl::expand_topic_name </h1>
+			<!-- <img class="header_image" src="../../../../../../../../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../../../../../../../../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="../../../../../../../../index.htm">Model</a> / <a href="../../../../../../EA73.htm">library</a> / <a href="../../../../../EA273.htm">MicroROS</a> / <a href="../../../../EA277.htm">src</a> / <a href="../../../EA809.htm">rcl</a> / <a href="../../EA816.htm">rcl</a> / <a href="../EA822.htm">include</a> / <a href="EA826.htm">rcl</a> / <a href="EA834.htm">expand_topic_name</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<a href="EA826.htm">rcl</a></ul>
+
+					</td>
+					<td class="contentcell"><div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">expand_topic_name  : Public   Class</span>
+	<table border="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">1/25/2023 12:37:24 PM</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">1/25/2023 12:37:24 PM</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">gentijo</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" >Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{69F97C57-DBFF-4704-AF32-D2BD4DD6BF9A}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA824.htm">rcl</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">The input_topic_name, node_name, and node_namespace arguments must all be valid, null terminated c strings. The output_topic_name will not be assigned a value in the event of an error.&#160;&#160;The output_topic_name will be null terminated. It is also allocated, so it needs to be deallocated, when it is no longer needed, with the same allocator given to this function. Make sure the `char *` which is passed for the output_topic_name does not point to allocated memory before calling this function, because it will be overwritten and therefore leaked if this function is successful.&#160;&#160;Expected usage:&#160;&#160;```c rcl_allocator_t allocator = rcl_get_default_allocator(); rcutils_allocator_t rcutils_allocator = rcutils_get_default_allocator(); rcutils_string_map_t substitutions_map = rcutils_get_zero_initialized_string_map(); rcutils_ret_t rcutils_ret = rcutils_string_map_init(&substitutions_map, 0, rcutils_allocator); if (rcutils_ret != RCUTILS_RET_OK) { ... error handling } rcl_ret_t ret = rcl_get_default_topic_name_substitutions(&substitutions_map); if (ret != RCL_RET_OK) { ... error handling } char * expanded_topic_name = NULL; ret = rcl_expand_topic_name( &quot;some/topic&quot;, &quot;my_node&quot;, &quot;my_ns&quot;, &substitutions_map, allocator, &expanded_topic_name); if (ret != RCL_RET_OK) { ... error handling } else { RCUTILS_LOG_INFO_NAMED(ROS_PACKAGE_NAME, &quot;Expanded topic name: %s&quot;, expanded_topic_name) ... when done the output topic name needs to be deallocated: allocator.deallocate(expanded_topic_name, allocator.state); } ```&#160;&#160;The input topic name is validated using rcl_validate_topic_name(), but if it fails validation RCL_RET_TOPIC_NAME_INVALID is returned.&#160;&#160;The input node name is validated using rmw_validate_node_name(), but if it fails validation RCL_RET_NODE_INVALID_NAME is returned.&#160;&#160;The input node namespace is validated using rmw_validate_namespace(), but if it fails validation RCL_RET_NODE_INVALID_NAMESPACE is returned.&#160;&#160;In addition to what is given by rcl_get_default_topic_name_substitutions(), there are there these substitutions:&#160;&#160;- {node} -#gt; the name of the node - {namespace} -#gt; the namespace of the node - {ns} -#gt; the namespace of the node&#160;&#160;If an unknown substitution is used, RCL_RET_UNKNOWN_SUBSTITUTION is returned. &lt;br/&gt;#lt;hr#gt; Attribute&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| Adherence ------------------ | ------------- Allocates Memory&#160;&#160;&#160;| Yes Thread-Safe&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| No Uses Atomics&#160;&#160;&#160;&#160;&#160;&#160;&#160;| No Lock-Free&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| Yes&#160;&#160;\param[in] input_topic_name topic name to be expanded \param[in] node_name name of the node associated with the topic \param[in] node_namespace namespace of the node associated with the topic \param[in] substitutions string map with possible substitutions \param[in] allocator the allocator to be used when creating the output topic \param[out] output_topic_name output char * pointer \return #RCL_RET_OK if the topic name was expanded successfully, or \return #RCL_RET_INVALID_ARGUMENT if any arguments are invalid, or \return #RCL_RET_BAD_ALLOC if allocating memory failed, or \return #RCL_RET_TOPIC_NAME_INVALID if the given topic name is invalid, or \return #RCL_RET_NODE_INVALID_NAME if the name is invalid, or \return #RCL_RET_NODE_INVALID_NAMESPACE if the namespace_ is invalid, or \return #RCL_RET_UNKNOWN_SUBSTITUTION for unknown substitutions in name, or \return #RCL_RET_ERROR if an unspecified error occurs.&lt;br/&gt;</div>
+
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent != null ? parent.toggleItem('Operations') : toggleItem('Operations');" id="OperationsTitle">Operations</li>
+			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+		</ul>
+<div class="ItemBody" id="OperationsTable">
+	<table class="Table ea_table">
+		<tr>
+			<td width="100%" class="TableHeading">Operation</td>
+		</tr>
+						<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>rcl_expand_topic_name</strong> (input_topic_name: char*, 
+node_name: char*, 
+node_namespace: char*, 
+substitutions: rcutils_string_map_t*, 
+allocator: <a href="EA863.htm">rcl_allocator_t</a>, 
+output_topic_name: char**, 
+) : RCL_WARN_UNUSED
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations5202" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>rcl_get_default_topic_name_substitutions</strong> (string_map: rcutils_string_map_t*, 
+) : RCL_WARN_UNUSED
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations5203" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+
+		</table>
+</div>		<div class="ItemBody" id="CustomPropertiesTable">
+			<table class="Table ea_table">
+				<tr>
+					<td width="30%" class="TableHeading">Property</td>
+					<td width="70%" class="TableHeading">Value</td>
+				</tr>
+			<tr>
+				<td width="30%" class="TableRow">isFinalSpecialization:</td>
+				<td width="70%" class="TableRow">0</td>
+			</tr>
+
+
+			</table>
+		</div>	</div>
+ </div>
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
+</body>
+</html>
+

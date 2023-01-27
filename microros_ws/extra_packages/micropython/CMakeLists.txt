@@ -83,7 +83,8 @@ set(MICROPY_SOURCE_SHARED
     ${MICROPY_DIR}/shared/runtime/sys_stdio_mphal.c
     ${MICROPY_DIR}/shared/runtime/pyexec.c
 
-#    ${MICROPY_DIR}/extmod/modwebrepl.c
+    ${MICROPY_DIR}/extmod/modwebrepl.c
+    ${MICROPY_PORT_DIR}/mpmain.c
 
 )
 
@@ -106,7 +107,6 @@ set(MICROPY_SOURCE_DRIVERS
     ${MICROPY_PORT_DIR}/uart_core.c
     ${MICROPY_PORT_DIR}/mpthreadport.c
     
-#    ${MICROPY_PORT_DIR}/mpmain.c
 )
 
 set(MICROPY_SOURCE_QSTR

@@ -1,0 +1,668 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>py::objfun</title>
+<link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../../../../js/displayToc.js" type="text/javascript"></script>
+<script>
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
+}
+
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
+</script>
+<style>
+
+</style>
+</head>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> py::objfun </h1>
+			<!-- <img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="../../../../index.htm">Model</a> / <a href="../../EA73.htm">library</a> / <a href="../EA76.htm">Micropython</a> / <a href="EA80.htm">py</a> / <a href="EA113.htm">objfun</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<li><img src="../../../../images/5.png" alt="Class"/> <a href="EA209.htm">_mp_obj_fun_asm_t</a></li>
+<li><img src="../../../../images/5.png" alt="Class"/> <a href="EA210.htm">_mp_obj_fun_bc_t</a></li>
+</ul>
+
+					</td>
+					<td class="contentcell"><div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">objfun  : Public   Class</span>
+	<table border="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">1/25/2023 12:41:49 PM</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">1/25/2023 12:41:49 PM</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">gentijo</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" >Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{99B4DD56-7046-4da8-AF3D-E9ADD89798FD}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA78.htm">py</a></td>
+		</tr>
+	</table>
+	
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent != null ? parent.toggleItem('Attributes') : toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
+			<li onClick="parent != null ? parent.toggleItem('Operations') : toggleItem('Operations');" id="OperationsTitle">Operations</li>
+			<li onClick="parent != null ? parent.toggleItem('AssociationsTo') : toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
+			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+		</ul>
+<div class="ItemBody" id="AttributesTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="50%" class="TableHeading">Attribute</td>
+			<td width="25%" class="TableHeading">Scope</td>
+			<td width="25%" class="TableHeading">Type</td>
+		</tr>
+						<tr>
+				<td width="50%" class="TableRow">
+					mp_type_fun_native
+				</td>
+				<td width="25%" class="TableRow">
+					Private 
+				</td>
+				<td width="25%" class="TableRow">
+					<a href="EA205.htm">mp_obj_type_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="3">										
+					
+						&nbsp;
+						
+				</td>
+			</tr>
+	</table>
+</div>
+<div class="ItemBody" id="OperationsTable">
+	<table class="Table ea_table">
+		<tr>
+			<td width="100%" class="TableHeading">Operation</td>
+		</tr>
+						<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>convert_obj_for_inline_asm</strong> (obj: <a href="EA204.htm">mp_obj_t</a>, 
+) : mp_uint_t
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1747" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>dump_args</strong> (a: mp_obj_t*, 
+sz: size_t, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1748" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>fun_asm_call</strong> (self_in: <a href="EA204.htm">mp_obj_t</a>, 
+n_args: size_t, 
+n_kw: size_t, 
+args: mp_obj_t*, 
+) : <a href="EA204.htm">mp_obj_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1749" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>fun_bc_call</strong> (self_in: <a href="EA204.htm">mp_obj_t</a>, 
+n_args: size_t, 
+n_kw: size_t, 
+args: mp_obj_t*, 
+) : <a href="EA204.htm">mp_obj_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1750" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>fun_bc_print</strong> (print: mp_print_t*, 
+o_in: <a href="EA204.htm">mp_obj_t</a>, 
+kind: mp_print_kind_t, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1751" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>fun_builtin_0_call</strong> (self_in: <a href="EA204.htm">mp_obj_t</a>, 
+n_args: size_t, 
+n_kw: size_t, 
+args: mp_obj_t*, 
+) : <a href="EA204.htm">mp_obj_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1752" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>fun_builtin_1_call</strong> (self_in: <a href="EA204.htm">mp_obj_t</a>, 
+n_args: size_t, 
+n_kw: size_t, 
+args: mp_obj_t*, 
+) : <a href="EA204.htm">mp_obj_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1753" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>fun_builtin_2_call</strong> (self_in: <a href="EA204.htm">mp_obj_t</a>, 
+n_args: size_t, 
+n_kw: size_t, 
+args: mp_obj_t*, 
+) : <a href="EA204.htm">mp_obj_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1754" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>fun_builtin_3_call</strong> (self_in: <a href="EA204.htm">mp_obj_t</a>, 
+n_args: size_t, 
+n_kw: size_t, 
+args: mp_obj_t*, 
+) : <a href="EA204.htm">mp_obj_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1755" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>fun_builtin_var_call</strong> (self_in: <a href="EA204.htm">mp_obj_t</a>, 
+n_args: size_t, 
+n_kw: size_t, 
+args: mp_obj_t*, 
+) : <a href="EA204.htm">mp_obj_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1756" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>fun_native_call</strong> (self_in: <a href="EA204.htm">mp_obj_t</a>, 
+n_args: size_t, 
+n_kw: size_t, 
+args: mp_obj_t*, 
+) : <a href="EA204.htm">mp_obj_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1757" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>MP_DEFINE_CONST_OBJ_TYPE</strong> (prm1: mp_type_fun_bc, 
+prm2: MP_QSTR_function, 
+prm3: MP_TYPE_FLAG_BINDS_SELF, 
+call: FUN_BC_TYPE_ATTR, 
+prm4: fun_bc_call, 
+prm5: unary_op, 
+prm6: mp_generic_unary_op, 
+) : 
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1758" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>MP_DEFINE_CONST_OBJ_TYPE</strong> (prm1: mp_type_fun_native, 
+prm2: MP_QSTR_function, 
+prm3: MP_TYPE_FLAG_BINDS_SELF, 
+call: FUN_BC_TYPE_ATTR, 
+prm4: fun_native_call, 
+prm5: unary_op, 
+prm6: mp_generic_unary_op, 
+) : STATIC
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1759" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>MP_DEFINE_CONST_OBJ_TYPE</strong> (prm1: mp_type_fun_asm, 
+prm2: MP_QSTR_function, 
+prm3: MP_TYPE_FLAG_BINDS_SELF, 
+prm4: call, 
+prm5: fun_asm_call, 
+prm6: unary_op, 
+prm7: mp_generic_unary_op, 
+) : STATIC
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1760" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>mp_obj_code_get_name</strong> (fun: mp_obj_fun_bc_t*, 
+code_info: byte*, 
+) : <a href="EA130.htm">qstr</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1761" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>mp_obj_fun_bc_attr</strong> (self_in: <a href="EA204.htm">mp_obj_t</a>, 
+attr: <a href="EA130.htm">qstr</a>, 
+dest: mp_obj_t*, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1762" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>mp_obj_fun_bc_prepare_codestate</strong> (self_in: <a href="EA204.htm">mp_obj_t</a>, 
+n_args: size_t, 
+n_kw: size_t, 
+args: mp_obj_t*, 
+) : mp_code_state_t *
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1763" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>mp_obj_fun_get_name</strong> (fun_in: <a href="EA203.htm">mp_const_obj_t</a>, 
+) : <a href="EA130.htm">qstr</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1764" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>mp_obj_new_fun_asm</strong> (n_args: size_t, 
+fun_data: void*, 
+type_sig: mp_uint_t, 
+) : <a href="EA204.htm">mp_obj_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1765" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>mp_obj_new_fun_bc</strong> (def_args: mp_obj_t*, 
+code: byte*, 
+cm: mp_module_context_t*, 
+raw_code_table: struct _mp_raw_code_t* const*, 
+) : <a href="EA204.htm">mp_obj_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1766" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>mp_obj_new_fun_native</strong> (def_args: mp_obj_t*, 
+fun_data: void*, 
+cm: mp_module_context_t*, 
+raw_code_table: struct _mp_raw_code_t* const*, 
+) : <a href="EA204.htm">mp_obj_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations1767" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+
+		</table>
+</div>		<div class="ItemBody" id="AssociationsToTable">
+			<table class="Table ea_table">
+				<tr>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA205.htm">«typedef» mp_obj_type_t</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> mp_type_fun_native<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1768" /></button>Details:
+							<div id="detailsDIVLink1768" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="CustomPropertiesTable">
+			<table class="Table ea_table">
+				<tr>
+					<td width="30%" class="TableHeading">Property</td>
+					<td width="70%" class="TableHeading">Value</td>
+				</tr>
+			<tr>
+				<td width="30%" class="TableRow">isFinalSpecialization:</td>
+				<td width="70%" class="TableRow">0</td>
+			</tr>
+
+
+			</table>
+		</div>	</div>
+ </div>
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
+</body>
+</html>
+

@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.2.2.1.6.4:1", "", "rclc_parameter", "EARoot/EA2/EA2/EA1/EA6/EA4/EA1158.htm", "175.png", "269", "0", "", "Logical diagram0","{00E06B6B-11A5-4c4c-B5FB-D64C5FC8325E}");
+tocTab[tocTab.length] = new Array("0.2.2.1.6.4.1", "1", "include", "EARoot/EA2/EA2/EA1/EA6/EA4/EA1/EA1165.htm", "4.png", "", "", "{594D9365-0ACD-4260-9A8A-1A1940FD76A2}", "Package");
+tocTab[tocTab.length] = new Array("0.2.2.1.6.4.2", "1", "src", "EARoot/EA2/EA2/EA1/EA6/EA4/EA2/EA1192.htm", "4.png", "", "", "{211BF6B2-B03D-4ccc-BF94-4A0F85AA3F9D}", "Package");

@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.2.2.1.2.1.6:1", "", "PublishHelloWorldCAN", "EARoot/EA2/EA2/EA1/EA2/EA1/EA6/EA362.htm", "175.png", "187", "0", "", "Logical diagram0","{CBE103CE-0BF6-4ab2-BB21-88D14F1DA14E}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.1.6:2", "", "HelloWorld", "EARoot/EA2/EA2/EA1/EA2/EA1/EA6/EA365.htm", "5.png", "E1105", "0", "", "Class0","{AF87B8D3-A516-4bab-818A-3E9E23E1C6F1}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.1.6:3", "", "«struct» HelloWorld", "EARoot/EA2/EA2/EA1/EA2/EA1/EA6/EA366.htm", "5.png", "E1104", "E1105", "", "Class0","{769098EC-65CA-45a1-9FDC-A8AA0EA07DDB}");

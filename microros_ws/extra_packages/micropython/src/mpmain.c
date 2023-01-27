@@ -38,7 +38,7 @@
 #include "soc/cpu.h"
 #include "esp_log.h"
 
-#if CONFIG_IDF_TARGET_ESP32
+#if CONFIG_IDF_TARGET_ESP32it a
 #include "esp32/spiram.h"
 #elif CONFIG_IDF_TARGET_ESP32S2
 #include "esp32s2/spiram.h"

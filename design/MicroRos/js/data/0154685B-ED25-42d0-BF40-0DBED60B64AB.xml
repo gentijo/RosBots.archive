@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("0.2.2.1.2.2.1.1.2.3.5:1", "", "stream_framing", "EARoot/EA2/EA2/EA1/EA2/EA2/EA1/EA1/EA2/EA3/EA5/EA678.htm", "175.png", "211", "0", "", "Logical diagram0","{66F662C7-8777-4d8c-A6AC-0793D962652D}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.2.1.1.2.3.5:2", "", "stream_framing_protocol", "EARoot/EA2/EA2/EA1/EA2/EA2/EA1/EA1/EA2/EA3/EA5/EA681.htm", "5.png", "E1351", "0", "", "Class0","{668E12D2-67D4-49fe-BB51-4602BAF922A0}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.2.1.1.2.3.5:3", "", "uxrFramingInputState", "EARoot/EA2/EA2/EA1/EA2/EA2/EA1/EA1/EA2/EA3/EA5/EA682.htm", "247.png", "E1349", "E1351", "", "Enumeration0","{C660A6D2-6276-4a62-BFB8-0E738B4A0DFB}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.2.1.1.2.3.5:4", "", "«struct» uxrFramingIO", "EARoot/EA2/EA2/EA1/EA2/EA2/EA1/EA1/EA2/EA3/EA5/EA683.htm", "5.png", "E1350", "E1351", "", "Class0","{328D2CB9-BB8B-4b10-BF32-3658FDF768F4}");

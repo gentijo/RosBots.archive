@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.2.2.1.2.2.1.1.1.1:1", "", "communication", "EARoot/EA2/EA2/EA1/EA2/EA2/EA1/EA1/EA1/EA1/EA416.htm", "175.png", "197", "0", "", "Logical diagram0","{9D017B7C-08DE-4134-8867-5D9AD1E853DD}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.2.1.1.1.1:2", "", "communication", "EARoot/EA2/EA2/EA1/EA2/EA2/EA1/EA1/EA1/EA1/EA419.htm", "5.png", "E1127", "0", "", "Class0","{F42CB4AC-45ED-4023-BEC9-22D0F459751E}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.2.1.1.1.1:3", "", "«struct» uxrCommunication", "EARoot/EA2/EA2/EA1/EA2/EA2/EA1/EA1/EA1/EA1/EA420.htm", "5.png", "E1126", "E1127", "", "Class0","{F1608D75-C3F9-408c-A4D1-C560012D3AD4}");

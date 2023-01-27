@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.2.2.1.2.2.1.1.2.2:1", "", "multithread", "EARoot/EA2/EA2/EA1/EA2/EA2/EA1/EA1/EA2/EA2/EA604.htm", "175.png", "203", "0", "", "Logical diagram0","{6C3F6A89-7508-4d48-A7F5-5418558C5270}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.2.1.1.2.2:2", "", "multithread", "EARoot/EA2/EA2/EA1/EA2/EA2/EA1/EA1/EA2/EA2/EA607.htm", "5.png", "E1299", "0", "", "Class0","{7E3A0E66-EB53-4049-AE47-63173E2BF888}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.2.1.1.2.2:3", "", "«struct» uxrMutex", "EARoot/EA2/EA2/EA1/EA2/EA2/EA1/EA1/EA2/EA2/EA608.htm", "5.png", "E1298", "E1299", "", "Class0","{53C620FF-0E11-45a0-9FAD-1D57CE6BF217}");

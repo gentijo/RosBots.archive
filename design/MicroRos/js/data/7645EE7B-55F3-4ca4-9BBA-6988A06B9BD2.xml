@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.2.2.1.2.2.1.1.2.3.2:1", "", "custom", "EARoot/EA2/EA2/EA1/EA2/EA2/EA1/EA1/EA2/EA3/EA2/EA624.htm", "175.png", "206", "0", "", "Logical diagram0","{793BE00B-8CBD-4446-82C8-0151AAA9D4D5}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.2.1.1.2.3.2:2", "", "custom_transport", "EARoot/EA2/EA2/EA1/EA2/EA2/EA1/EA1/EA2/EA3/EA2/EA627.htm", "5.png", "E1308", "0", "", "Class0","{29B6B62F-055F-4111-8649-2E874DAAB4C6}");
+tocTab[tocTab.length] = new Array("0.2.2.1.2.2.1.1.2.3.2:3", "", "«struct» uxrCustomTransport", "EARoot/EA2/EA2/EA1/EA2/EA2/EA1/EA1/EA2/EA3/EA2/EA628.htm", "5.png", "E1307", "E1308", "", "Class0","{22F67D58-7A09-4037-A51D-AB31E9421BF9}");
