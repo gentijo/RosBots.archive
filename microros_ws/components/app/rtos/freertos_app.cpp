@@ -1,7 +1,5 @@
 #include "freertos_app.h"
 
-
-
 void freertos_app::init() {
 
 };

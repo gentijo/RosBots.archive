@@ -85,7 +85,8 @@
 			"mperrno.h": "c",
 			"root_pointers.h": "c",
 			"builtin.h": "c",
-			"uart.h": "c"
+			"uart.h": "c",
+			"machine_spi.h": "c"
 		}
 	}
 }

@@ -1,7 +1,0 @@
-/opt/rosbots/microros_ws/assemblies/mptest/build/genhdr/qstrdefs.collected.
-
-cd /opt/rosbots/microros_ws/assemblies/mptest/build
-&&
-cat /opt/rosbots/microros_ws/extern/micropython/py/qstrdefs.h
-    /opt/rosbots/microros_ws/extern/micropython/ports/esp32/qstrdefsport.h
-    /opt/rosbots/microros_ws/assemblies/mptest/build/genhdr/qstrdefs.collected.h | sed "s/^Q(.*)/\"&\"/" | -E -I/opt/esp/idf/components/bt/host/nimble/nimble -I/opt/esp/idf/components/soc/soc/esp32/include -I/opt/esp/idf/components/soc/soc/include -I/opt/esp/idf/components/tinyusb/additions/include -I/opt/esp/idf/components/tinyusb/tinyusb/src -DMICROPY_PY_BTREE=1 -D__DBINTERFACE_PRIVATE=1 "-Dvirt_fd_t=void*" -DMICROPY_ESP_IDF_4=1 -DMICROPY_VFS_FAT=1 -DMICROPY_VFS_LFS2=1 -DFFCONF_H=\"/opt/rosbots/microros_ws/extern/micropython/lib/oofatfs/ffconf.h\" -DLFS1_NO_MALLOC -DLFS1_NO_DEBUG -DLFS1_NO_WARN -DLFS1_NO_ERROR -DLFS1_NO_ASSERT -DLFS2_NO_MALLOC -DLFS2_NO_DEBUG -DLFS2_NO_WARN -DLFS2_NO_ERROR -DLFS2_NO_ASSERT -DMICROPY_QSTR_EXTRA_POOL=mp_qstr_frozen_const_pool "-DMICROPY_MODULE_FROZEN_MPY=(1)" - | sed "s/^\\\"\\(Q(.*)\\)\\\"/\\1/" > /opt/rosbots/microros_ws/assemblies/mptest/build/genhdr/qstrdefs.preprocessed.h

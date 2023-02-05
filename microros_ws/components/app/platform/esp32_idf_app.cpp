@@ -17,12 +17,11 @@ void esp32_idf_app::init() {
 
     
  	#if defined(CONFIG_MICRO_ROS_ESP_NETIF_WLAN) || defined(CONFIG_MICRO_ROS_ESP_NETIF_ENET)
-    printf("\r\nInitializing Wifi %s %s\r\n",ESP_WIFI_SSID, ESP_WIFI_PASS );
-
-    ESP_ERROR_CHECK(uros_network_interface_initialize());
+        printf("\r\nInitializing Wifi %s %s\r\n",ESP_WIFI_SSID, ESP_WIFI_PASS );
+        ESP_ERROR_CHECK(uros_network_interface_initialize());
 	#endif
 
-    printf("\r\n\n\n\nPlatform Init %s %s\r\n",ESP_WIFI_SSID, ESP_WIFI_PASS );
+    printf("\r\nPlatform Init %s %s\r\n",ESP_WIFI_SSID, ESP_WIFI_PASS );
   
     esp_I2C* i2c_host = new esp_I2C();
     i2c_host->initialize(CONFIG_I2C_HOST_PORT_NUM, true);
