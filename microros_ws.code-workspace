@@ -1,10 +1,7 @@
 {
 	"folders": [
 		{
-			"path": "microros_ws"
-		},
-		{
-			"path": "../esp/idf"
+			"path": "."
 		}
 	],
 	"settings": {

@@ -25,6 +25,10 @@
 #include <rmw_microros/rmw_microros.h>
 #endif
 
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
+
 #define MAX_SUBSCRIPTIONS 30
 
 class microros_app_base : public if_microros_app {

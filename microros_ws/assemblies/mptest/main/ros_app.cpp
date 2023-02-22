@@ -38,7 +38,7 @@ void ros_app::initialize() {
     m_platform->init();
     
     printf("\r\nFree memory: %d bytes", esp_get_free_heap_size());
- 
+    
     init();
 
     printf("\r\nFree memory: %d bytes", esp_get_free_heap_size());
@@ -56,6 +56,7 @@ void ros_app::ROS_init_ok() {
     printf("\r\nROS Init OK\r\n");
 
     mp_app_main();
-    add_ros_subscription(new microros_timer_mgr(system_timer_callback, 1000));
+    
+//    add_ros_subscription(new microros_timer_mgr(system_timer_callback, 1000));
 }
  

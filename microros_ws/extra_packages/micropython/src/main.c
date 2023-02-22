@@ -69,7 +69,7 @@
 
 // MicroPython runs as a task under FreeRTOS
 #define MP_TASK_PRIORITY        (ESP_TASK_PRIO_MIN + 1)
-#define MP_TASK_STACK_SIZE      (16 * 1024)
+#define MP_TASK_STACK_SIZE      (8 * 1024)
 
 // Set the margin for detecting stack overflow, depending on the CPU architecture.
 #if CONFIG_IDF_TARGET_ESP32C3
@@ -235,7 +235,7 @@ void boardctrl_startup(void) {
 void mp_app_main(void) {
     // Hook for a board to run code at start up.
     // This defaults to initialising NVS.
-    MICROPY_BOARD_STARTUP();
+//    MICROPY_BOARD_STARTUP();
 
     // Create and transfer control to the MicroPython task.
     xTaskCreatePinnedToCore(mp_task, "mp_task", MP_TASK_STACK_SIZE / sizeof(StackType_t), NULL, MP_TASK_PRIORITY, &mp_main_task_handle, MP_TASK_COREID);

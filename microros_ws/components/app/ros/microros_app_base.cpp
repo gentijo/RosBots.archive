@@ -190,7 +190,7 @@ void microros_app_base::microros_app_task(void * arg) {
     // Spin forever
 	while(1){
 		rclc_executor_spin_some(&m_executor, RCL_MS_TO_NS(100));
-		usleep(1000);
+        vTaskDelay( 1000 / portTICK_PERIOD_MS );
 	}
 
     rc = rcl_node_fini(&m_node);
