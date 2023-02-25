@@ -1,19 +1,66 @@
 {
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "ESP-IDF Debug: Launch",
+            "type": "espidf",
+            "request": "launch",
+            "executable": "${workspaceRoot}/microros_ws/assemblies/mptest/build/mptest.elf",
+            "target": ":3333",
+            "remote": true,
+            "cwd": "${workspaceRoot}/microros_ws/assemblies/mptest",
+        },
+        {
+            "type": "gdb",
+            "request": "launch",
+            "name": "Launch Program",
+            "target": "${workspaceFolder}/microros_ws/assemblies/mptest/build/mptest.elf",
+            "cwd": "${workspaceFolder}/microros_ws/assemblies/mptest",
+            "gdbpath": "/opt/esp/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gdb",
+            "autorun": 
+            [
+                "target remote :3333"
+            ]
+        },
+        {
+            "name": "OpenOCD Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/microros_ws/assemblies/esp32-range-buggy/build/range_buggy.elf",
-            "cwd": "${workspaceFolder}/microros_ws/assemblies/esp32-range-buggy/",
+            "gdbpath": "/opt/esp/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gdb",
             "miDebuggerPath": "/opt/esp/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gdb",
+            "program": "${workspaceFolder}/microros_ws/assemblies/mptest/build/mptest.elf",
+
             "setupCommands": [
-                { "text": "target remote 127.0.0.1:3333"},
-                { "text": "set remote hardware-watchpoint-limit 2"},
-                { "text": "monitor reset halt"},
-                { "text": "flushregs"}
-            ]
+                {
+                    "description": "enable pretty printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "text": "file '${workspaceFolder}/microros_ws/assemblies/mptest/build/mptest.elf'"
+                },
+                {
+                    "text": "target remote :3333"
+                },
+                {
+                    "text": "set remote hardware-watchpoint-limit 2",
+                },
+                {
+                    "text": "flushregs"
+                },
+                {
+                    "text": "monitor reset halt"
+                },
+                {
+                    "text": "thb app_main"
+                }
+            ],
+            "cwd": "${workspaceFolder}/microros_ws/assemblies/mptest",
+            "externalConsole": false
         }
-    ],
-    "version": "2.0.0"
+
+    ]
 }
