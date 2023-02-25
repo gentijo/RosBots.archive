@@ -1,14 +1,12 @@
 micro_ros_dev
 micro_ros_src
-esp32_toolchain.*
 *.a
 *.out
-./include
+
 archive
+Archive/**
+
 build
 .images
-*~
-Archive/**
-libmicroros.sym
 
-libs/microros
+

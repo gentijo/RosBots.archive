@@ -1,1 +1,4 @@
-**/
+esp32_toolchain.cmake
+include/**
+libmicroros.a
+
