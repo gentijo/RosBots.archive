@@ -4,6 +4,8 @@
 
 void microros_app_base::init() {
 
+	printf("\r\nMicroRos App Base Init");
+
 	g_ros_app->get_RTOS()->create_task( 
 		microros_app_base::static_microros_app_task, "microros_task", 
 		CONFIG_MICRO_ROS_APP_STACK, NULL, 
@@ -102,6 +104,7 @@ void microros_app_base::static_microros_app_task(void * arg)
 }
 
 void microros_app_base::microros_app_task(void * arg) {
+	rcl_ret_t rc;
 
 	m_allocator = rcl_get_default_allocator();
 	
@@ -110,11 +113,22 @@ void microros_app_base::microros_app_task(void * arg) {
     m_init_options = rcl_get_zero_initialized_init_options();
 
 
-	RCCHECK(rcl_init_options_init(
-		&m_init_options, m_allocator));
+	rc = rcl_init_options_init(
+		&m_init_options, 
+		m_allocator);
 
-	RCCHECK(rcl_init_options_set_domain_id(
-		&m_init_options, m_domain_id));
+	if (rc != RCL_RET_OK) {
+		printf("ROS Failed status on line %d: %s %d. Aborting.\n",__LINE__, __FILE__, (int)rc);
+		return;
+	}
+
+	rc = rcl_init_options_set_domain_id(
+		&m_init_options, m_domain_id);
+	if (rc != RCL_RET_OK) {
+		printf("ROS Failed status on line %d: %s %d. Aborting.\n",__LINE__, __FILE__, (int)rc);
+		return;
+	}
+
 
 #ifdef CONFIG_MICRO_ROS_ESP_XRCE_DDS_MIDDLEWARE
 	rmw_init_options_t* rmw_options = rcl_init_options_get_rmw_init_options(&m_init_options);
@@ -124,40 +138,67 @@ void microros_app_base::microros_app_task(void * arg) {
 	//RCCHECK(rmw_uros_discover_agent(rmw_options));
 #endif
 
-    printf("\r\nInit RCLC\r\n");
+	printf("\r\nInit RCLC\r\n");
+
 	// Setup support structure.
-	RCCHECK(rclc_support_init_with_options(
+	rc = rclc_support_init_with_options(
 		&m_support, 0, NULL, 
 		&m_init_options, 
-		&m_allocator));
+		&m_allocator);
+
+	if (rc != RCL_RET_OK) {
+		printf("ROS Failed status on line %d: %s %d. Aborting.\n",__LINE__, __FILE__, (int)rc);
+		return;
+	}
+
 
     printf("Node Init\r\n");
-    RCCHECK(rclc_node_init_default(
+    rc = rclc_node_init_default(
 		&m_node, 
 		m_name, 
 		m_namespace , 
-		&m_support));
+		&m_support);
+
+	if (rc != RCL_RET_OK) {
+		printf("ROS Failed status on line %d: %s %d. Aborting.\n",__LINE__, __FILE__, (int)rc);
+		return;
+	}
    
     printf("Executor Init\r\n");
-    RCCHECK(rclc_executor_init(
+    rc = rclc_executor_init(
 		&m_executor, 
 		&m_support.context, 2, 
-		&m_allocator));
+		&m_allocator);
+
+	if (rc != RCL_RET_OK) {
+		printf("ROS Failed status on line %d: %s %d. Aborting.\n",__LINE__, __FILE__, (int)rc);
+		return;
+	}
 
 	
-	RCCHECK(rclc_executor_set_timeout(
+	rc = rclc_executor_set_timeout(
 		get_ROS_Executor(), 
-		RCL_MS_TO_NS(m_rcl_wait_timeout)));
+		RCL_MS_TO_NS(m_rcl_wait_timeout));
+
+	if (rc != RCL_RET_OK) {
+		printf("ROS Failed status on line %d: %s %d. Aborting.\n",__LINE__, __FILE__, (int)rc);
+		return;
+	}
 
 	ROS_init_ok();
  
     // Spin forever
 	while(1){
 		rclc_executor_spin_some(&m_executor, RCL_MS_TO_NS(100));
-		usleep(1000);
+        vTaskDelay( 1000 / portTICK_PERIOD_MS );
 	}
 
-    RCCHECK(rcl_node_fini(&m_node));
+    rc = rcl_node_fini(&m_node);
     
+	if (rc != RCL_RET_OK) {
+		printf("ROS Failed status on line %d: %s %d. Aborting.\n",__LINE__, __FILE__, (int)rc);
+		return;
+	}
+
 };
 

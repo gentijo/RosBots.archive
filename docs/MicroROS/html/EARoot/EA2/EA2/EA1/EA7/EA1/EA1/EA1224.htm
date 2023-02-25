@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>rcutils::repl_str</title>
+<link href="../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../../../../../../../js/displayToc.js" type="text/javascript"></script>
+<script>
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
+}
+
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
+</script>
+<style>
+
+</style>
+</head>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> rcutils::repl_str </h1>
+			<!-- <img class="header_image" src="../../../../../../../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../../../../../../../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="../../../../../../../index.htm">Model</a> / <a href="../../../../../EA73.htm">library</a> / <a href="../../../../EA273.htm">MicroROS</a> / <a href="../../../EA277.htm">src</a> / <a href="../../EA1200.htm">rcutils</a> / <a href="../EA1206.htm">include</a> / <a href="EA1210.htm">rcutils</a> / <a href="EA1224.htm">repl_str</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<a href="EA1210.htm">rcutils</a></ul>
+
+					</td>
+					<td class="contentcell"><div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">repl_str  : Public   Class</span>
+	<table border="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">1/25/2023 12:37:52 PM</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">1/25/2023 12:37:52 PM</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../../../../../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">gentijo</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" >Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../../../../../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{84285202-9C16-4ab6-9BE3-E736E2C574B7}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA1208.htm">rcutils</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">Documentation copied from the source with minor tweaks:&#160;&#160;----&#160;&#160;Description:**&#160;&#160;Replaces in the string `str` all the occurrences of the source string `from` with the destination string `to`. The lengths of the strings `from` and `to` may differ. The string `to` may be of any length, but the string `from` must be of non-zero length - the penalty for providing an empty string for the `from` parameter is an infinite loop. In addition, none of the three parameters may be NULL.&#160;&#160;Returns:**&#160;&#160;The post-replacement string, or NULL if memory for the new string could not be allocated. Does not modify the original string. The memory for the returned post-replacement string may be deallocated with given allocator&#39;s deallocate function when it is no longer required.&#160;&#160;Performance:**&#160;&#160;In case you are curious enough to want to compare this implementation with alternative implementations, you are welcome to compile and run the code in the benchmarking file, [replacebench.c](http://creativeandcritical.net/downloads/replacebench.c). In that file, the above function is included as `replace_cache`, and the functions originally published on this page as `replace_str2` and `replace_str` are included as `replace_opt2` and `replace_opt`. Code/functions are included from the comp.lang.c thread, [how to replace a substring in a string using C?] (https://groups.google.com/forum/#!msg/comp.lang.c/sgydS2lDgxc/v2MRxRrAQncJ), from answers to the stackoverflow question, [What is the function to replace string in C?] (http://stackoverflow.com/questions/779875/what-is-the-function-to-replace-string-in-c), and also from private correspondence. See the comments top of file for instructions on compiling and running it.&#160;&#160;In most scenarios, the fastest replacement function, by around 10-20%, is Albert Chan&#39;s `replace_smart`, followed by the above function: `repl_str` aka `replace_cache`. There are some scenarios, though, where `repl_str` is faster than `replace_smart`, sometimes by up to 200%. These scenarios involve long strings with few matches. Why, if Albert&#39;s function is generally slightly faster than the above `repl_str` function, is it not the focus of this page? Because it generally uses much more memory than `repl_str`.&#160;&#160;The third fastest implementation is typically `replace_str2` aka `replace_opt2`. For longer strings in the case in which the lengths of the &quot;from&quot; and &quot;to&quot; strings differ, `repl_str` aka `replace_cache` beats it by margins of up to about 80%. For smaller strings, and in the case where the lengths of the &quot;from&quot; and &quot;to&quot; strings are identical, `replace_str2` aka `replace_opt2` is faster, by a maximum margin of about 35%, sometimes in those scenarios beating `replace_smart` too. Some of the other functions are also faster for smaller strings. The even-match point between `replace_str2` and `repl_str` (assuming &quot;from&quot; and &quot;to&quot; string lengths differ) depends on how far into the string the final match occurs, how many matches there are, and the comparative lengths of the old and &quot;to&quot; strings, but roughly it occurs for strings of 700-800 bytes in length.&#160;&#160;This analysis is based on compiling with [GCC](https://gcc.gnu.org/) and testing on a 64-bit Intel platform running Linux, however brief testing with [Microsoft Visual C++ 2010 Express] (https://www.visualstudio.com/en-US/products/visual-studio-express-vs) (scroll down to &quot;Additional information&quot; at that link) on Windows 7 seemed to produce similar results.&#160;&#160;----&#160;&#160;Here continues additional documentation added by OSRF.&#160;&#160;The allocator must not be NULL.&#160;&#160;\param[in] str string to have substrings found and replaced within \param[in] from string to match for replacement \param[in] to string to replace matched strings with \param[in] allocator structure defining functions to be used for allocation \return duplicated `str` with all matches of `from` replaced with `to`.&lt;br/&gt;</div>
+
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+		</ul>
+		<div class="ItemBody" id="CustomPropertiesTable">
+			<table class="Table ea_table">
+				<tr>
+					<td width="30%" class="TableHeading">Property</td>
+					<td width="70%" class="TableHeading">Value</td>
+				</tr>
+			<tr>
+				<td width="30%" class="TableRow">isFinalSpecialization:</td>
+				<td width="70%" class="TableRow">0</td>
+			</tr>
+
+
+			</table>
+		</div>	</div>
+ </div>
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
+</body>
+</html>
+

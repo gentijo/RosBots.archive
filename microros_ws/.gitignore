@@ -10,3 +10,5 @@ build
 *~
 Archive/**
 libmicroros.sym
+
+libs/microros

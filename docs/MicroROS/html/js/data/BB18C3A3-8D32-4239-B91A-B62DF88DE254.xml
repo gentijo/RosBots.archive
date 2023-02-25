@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("0.2.2.1.9.2.1:1", "", "test", "EARoot/EA2/EA2/EA1/EA9/EA2/EA1/EA1397.htm", "175.png", "300", "0", "", "Logical diagram0","{3EF6E205-9B27-4ab0-A5BE-ED664B5D7EBC}");
+tocTab[tocTab.length] = new Array("0.2.2.1.9.2.1:2", "", "allocator_testing_utils", "EARoot/EA2/EA2/EA1/EA9/EA2/EA1/EA1400.htm", "5.png", "E1815", "0", "", "Class0","{ACC88BC6-52FF-4b77-BD0C-EF03F595B5EC}");
+tocTab[tocTab.length] = new Array("0.2.2.1.9.2.1:3", "", "«struct» __failing_allocator_state", "EARoot/EA2/EA2/EA1/EA9/EA2/EA1/EA1401.htm", "5.png", "E1814", "E1815", "", "Class0","{D6518D2A-FF60-477c-BDA9-AD54BA4CC003}");

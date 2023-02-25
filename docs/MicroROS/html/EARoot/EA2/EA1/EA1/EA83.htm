@@ -1,0 +1,1435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>py::asmthumb</title>
+<link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../../../../js/displayToc.js" type="text/javascript"></script>
+<script>
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
+}
+
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
+</script>
+<style>
+
+</style>
+</head>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> py::asmthumb </h1>
+			<!-- <img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="../../../../index.htm">Model</a> / <a href="../../EA73.htm">library</a> / <a href="../EA76.htm">Micropython</a> / <a href="EA80.htm">py</a> / <a href="EA83.htm">asmthumb</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<li><img src="../../../../images/5.png" alt="Class"/> <a href="EA145.htm">_asm_thumb_t</a></li>
+</ul>
+
+					</td>
+					<td class="contentcell"><div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">asmthumb  : Public   Class</span>
+	<table border="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">1/25/2023 12:41:42 PM</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">1/25/2023 12:41:42 PM</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">gentijo</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" >Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{B6291581-EF02-4e50-A7D1-976982189014}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA78.htm">py</a></td>
+		</tr>
+	</table>
+	
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent != null ? parent.toggleItem('Operations') : toggleItem('Operations');" id="OperationsTitle">Operations</li>
+			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+		</ul>
+<div class="ItemBody" id="OperationsTable">
+	<table class="Table ea_table">
+		<tr>
+			<td width="100%" class="TableHeading">Operation</td>
+		</tr>
+						<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_add_reg_reg</strong> (as: asm_thumb_t*, 
+r_dest: <a href="EA181.htm">uint</a>, 
+r_src: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations749" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>asm_thumb_add_reg_reg_offset</strong> (as: asm_thumb_t*, 
+reg_dest: <a href="EA181.htm">uint</a>, 
+reg_base: <a href="EA181.htm">uint</a>, 
+offset: <a href="EA181.htm">uint</a>, 
+offset_shift: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations750" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_add_rlo_i8</strong> (as: asm_thumb_t*, 
+rlo: <a href="EA181.htm">uint</a>, 
+i8: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations751" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_add_rlo_rlo_i3</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_src_a: <a href="EA181.htm">uint</a>, 
+i3_src: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations752" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_add_rlo_rlo_rlo</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_src_a: <a href="EA181.htm">uint</a>, 
+rlo_src_b: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations753" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_allow_armv7m</strong> (as: asm_thumb_t*, 
+) : bool
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations754" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_asr_rlo_rlo_i5</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_src: <a href="EA181.htm">uint</a>, 
+shift: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations755" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_b_label</strong> (as: asm_thumb_t*, 
+label: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations756" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_b_n_label</strong> (as: asm_thumb_t*, 
+label: <a href="EA181.htm">uint</a>, 
+) : bool
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations757" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_b_rel12</strong> (as: asm_thumb_t*, 
+rel: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations758" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_bcc_label</strong> (as: asm_thumb_t*, 
+cc: int, 
+label: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations759" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_bcc_nw_label</strong> (as: asm_thumb_t*, 
+cond: int, 
+label: <a href="EA181.htm">uint</a>, 
+wide: bool, 
+) : bool
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations760" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_bcc_rel9</strong> (as: asm_thumb_t*, 
+cc: int, 
+rel: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations761" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_bl_ind</strong> (as: asm_thumb_t*, 
+fun_id: <a href="EA181.htm">uint</a>, 
+reg_temp: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations762" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_bl_label</strong> (as: asm_thumb_t*, 
+label: <a href="EA181.htm">uint</a>, 
+) : bool
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations763" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_bx_reg</strong> (as: asm_thumb_t*, 
+r_src: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations764" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_cmp_rlo_i8</strong> (as: asm_thumb_t*, 
+rlo: <a href="EA181.htm">uint</a>, 
+i8: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations765" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_cmp_rlo_rlo</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_src: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations766" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_end_pass</strong> (as: asm_thumb_t*, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations767" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_entry</strong> (as: asm_thumb_t*, 
+num_locals: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations768" class="DetailsDiv" >					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			locals: - stored on the stack in ascending order - numbered 0 through num_locals-1 - SP points to first local&#160;&#160;| SP v l0&#160;&#160;l1&#160;&#160;l2&#160;&#160;...&#160;&#160;l(n-1) ^&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;^ | low address&#160;&#160;&#160;&#160;| high address in RAM&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_exit</strong> (as: asm_thumb_t*, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations769" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_format_1</strong> (as: asm_thumb_t*, 
+op: <a href="EA181.htm">uint</a>, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_src: <a href="EA181.htm">uint</a>, 
+offset: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations770" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_format_11</strong> (as: asm_thumb_t*, 
+op: <a href="EA181.htm">uint</a>, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_src: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations771" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_format_2</strong> (as: asm_thumb_t*, 
+op: <a href="EA181.htm">uint</a>, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_src: <a href="EA181.htm">uint</a>, 
+src_b: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations772" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_format_3</strong> (as: asm_thumb_t*, 
+op: <a href="EA181.htm">uint</a>, 
+rlo: <a href="EA181.htm">uint</a>, 
+i8: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations773" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_format_4</strong> (as: asm_thumb_t*, 
+op: <a href="EA181.htm">uint</a>, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_src: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations774" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_format_5</strong> (as: asm_thumb_t*, 
+op: <a href="EA181.htm">uint</a>, 
+r_dest: <a href="EA181.htm">uint</a>, 
+r_src: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations775" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_format_9_10</strong> (as: asm_thumb_t*, 
+op: <a href="EA181.htm">uint</a>, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_base: <a href="EA181.htm">uint</a>, 
+offset: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations776" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>asm_thumb_get_cur_to_write_bytes</strong> (as: asm_thumb_t*, 
+n: int, 
+) : byte *
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations777" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_it_cc</strong> (as: asm_thumb_t*, 
+cc: <a href="EA181.htm">uint</a>, 
+mask: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations778" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>asm_thumb_ldr_reg_reg_i12</strong> (as: asm_thumb_t*, 
+reg_dest: <a href="EA181.htm">uint</a>, 
+reg_base: <a href="EA181.htm">uint</a>, 
+word_offset: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations779" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_ldr_reg_reg_i12_optimised</strong> (as: asm_thumb_t*, 
+reg_dest: <a href="EA181.htm">uint</a>, 
+reg_base: <a href="EA181.htm">uint</a>, 
+word_offset: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations780" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_ldr_rlo_pcrel_i8</strong> (as: asm_thumb_t*, 
+rlo: <a href="EA181.htm">uint</a>, 
+i8: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations781" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_ldr_rlo_rlo_i5</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_base: <a href="EA181.htm">uint</a>, 
+word_offset: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations782" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_ldrb_rlo_rlo_i5</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_base: <a href="EA181.htm">uint</a>, 
+byte_offset: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations783" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>asm_thumb_ldrh_reg_reg_i12</strong> (as: asm_thumb_t*, 
+reg_dest: <a href="EA181.htm">uint</a>, 
+reg_base: <a href="EA181.htm">uint</a>, 
+uint16_offset: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations784" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_ldrh_reg_reg_i12_optimised</strong> (as: asm_thumb_t*, 
+reg_dest: <a href="EA181.htm">uint</a>, 
+reg_base: <a href="EA181.htm">uint</a>, 
+uint16_offset: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations785" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_ldrh_rlo_rlo_i5</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_base: <a href="EA181.htm">uint</a>, 
+uint16_offset: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations786" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_lsl_rlo_rlo_i5</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_src: <a href="EA181.htm">uint</a>, 
+shift: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations787" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>asm_thumb_mov_local_check</strong> (as: asm_thumb_t*, 
+word_offset: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations788" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_mov_local_reg</strong> (as: asm_thumb_t*, 
+local_num_dest: int, 
+rlo_src: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations789" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_mov_reg_i16</strong> (as: asm_thumb_t*, 
+mov_op: <a href="EA181.htm">uint</a>, 
+reg_dest: <a href="EA181.htm">uint</a>, 
+i16_src: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations790" class="DetailsDiv" >					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			if loading lo half with movw, the i16 value will be zero extended into the r32 register!&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_mov_reg_i32</strong> (as: asm_thumb_t*, 
+reg_dest: <a href="EA181.htm">uint</a>, 
+i32_src: mp_uint_t, 
+) : size_t
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations791" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_mov_reg_i32_optimised</strong> (as: asm_thumb_t*, 
+reg_dest: <a href="EA181.htm">uint</a>, 
+i32_src: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations792" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_mov_reg_local</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+local_num: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations793" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_mov_reg_local_addr</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+local_num: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations794" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_mov_reg_pcrel</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+label: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations795" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_mov_reg_reg</strong> (as: asm_thumb_t*, 
+reg_dest: <a href="EA181.htm">uint</a>, 
+reg_src: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations796" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>asm_thumb_mov_rlo_i16</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+i16_src: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations797" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_mov_rlo_i8</strong> (as: asm_thumb_t*, 
+rlo: <a href="EA181.htm">uint</a>, 
+i8: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations798" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_mvn_rlo_rlo</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_src: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations799" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_neg_rlo_rlo</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_src: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations800" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_op16</strong> (as: asm_thumb_t*, 
+op: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations801" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_op32</strong> (as: asm_thumb_t*, 
+op1: <a href="EA181.htm">uint</a>, 
+op2: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations802" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_str_rlo_rlo_i5</strong> (as: asm_thumb_t*, 
+rlo_src: <a href="EA181.htm">uint</a>, 
+rlo_base: <a href="EA181.htm">uint</a>, 
+word_offset: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations803" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_strb_rlo_rlo_i5</strong> (as: asm_thumb_t*, 
+rlo_src: <a href="EA181.htm">uint</a>, 
+rlo_base: <a href="EA181.htm">uint</a>, 
+byte_offset: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations804" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_strh_rlo_rlo_i5</strong> (as: asm_thumb_t*, 
+rlo_src: <a href="EA181.htm">uint</a>, 
+rlo_base: <a href="EA181.htm">uint</a>, 
+uint16_offset: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations805" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_sub_rlo_i8</strong> (as: asm_thumb_t*, 
+rlo: <a href="EA181.htm">uint</a>, 
+i8: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations806" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_sub_rlo_rlo_i3</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_src_a: <a href="EA181.htm">uint</a>, 
+i3_src: int, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations807" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_sub_rlo_rlo_rlo</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_src_a: <a href="EA181.htm">uint</a>, 
+rlo_src_b: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations808" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>asm_thumb_sxth_rlo_rlo</strong> (as: asm_thumb_t*, 
+rlo_dest: <a href="EA181.htm">uint</a>, 
+rlo_src: <a href="EA181.htm">uint</a>, 
+) : void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations809" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>get_label_dest</strong> (as: asm_thumb_t*, 
+label: <a href="EA181.htm">uint</a>, 
+) : mp_uint_t
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations810" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>mp_clz</strong> (x: uint32_t, 
+) : uint32_t
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations811" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private</i><br />
+					<strong>mp_ctz</strong> (x: uint32_t, 
+) : uint32_t
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent">Details:</BR>
+						<div id="detailsDIVOperations812" class="DetailsDiv" >					
+					
+						</div>
+<div style="text-align: right">[ Is static True. Is abstract False. Is return array False. Is query False. Is synchronized False. ]</div>
+					</div>
+				</td>
+			</tr>
+
+		</table>
+</div>		<div class="ItemBody" id="CustomPropertiesTable">
+			<table class="Table ea_table">
+				<tr>
+					<td width="30%" class="TableHeading">Property</td>
+					<td width="70%" class="TableHeading">Value</td>
+				</tr>
+			<tr>
+				<td width="30%" class="TableRow">isFinalSpecialization:</td>
+				<td width="70%" class="TableRow">0</td>
+			</tr>
+
+
+			</table>
+		</div>	</div>
+ </div>
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
+</body>
+</html>
+

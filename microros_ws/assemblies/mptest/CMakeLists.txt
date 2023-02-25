@@ -3,28 +3,40 @@ cmake_minimum_required(VERSION 3.5)
 get_filename_component(PROJECT_DIR "./" ABSOLUTE)
 message("Project Dir is ${PROJECT_DIR}")  
 
-set (EXTRA_COMPONENT_DIRS  "./../../.")
+get_filename_component(COMPONENT_DIR "./../../extra_packages" ABSOLUTE)
+message("Component Dir is ${COMPONENT_DIR}")  
+
+set (EXTRA_COMPONENT_DIRS ${COMPONENT_DIR} )
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-project(mptest)
+#include($ENV{IDF_PATH}/tools/cmake/component.cmake)
+#include($ENV{IDF_PATH}/tools/cmake/idf.cmake)
+#include($ENV{IDF_PATH}/tools/cmake/targets.cmake)
+#include($ENV{IDF_PATH}/tools/cmake/utilities.cmake)
 
-message("\r\n\n\nCMake C Compiler: " ${CMAKE_C_COMPILER})
+include(ExternalProject )
 
-include("./../../components/esp32/micropython/CMakeLists.txt")
-include("./../../components/esp32/micropython/CMakeLists_02.txt")
+# Define the output sdkconfig so it goes in the build directory.
+#set(SDKCONFIG ${CMAKE_BINARY_DIR}/sdkconfig)
 
-
-set(SDK_CONFIG_FILE_IN  ${PROJECT_DIR}/sdkconfig)
-set(SDK_CONFIG_FILE     ${CMAKE_BINARY_DIR}/sdkconfig)
+set(SDK_CONFIG_FILE_IN          ${PROJECT_DIR}/sdkconfig.defaults)
+set(SDK_CONFIG_FILE             ${PROJECT_DIR}/sdkconfig.combined)
+set(SDK_CONFIG_FILE_BUILD       ${CMAKE_BINARY_DIR}/sdkconfig.combined)
 
 # Concatenate all sdkconfig files into a combined one for the IDF to use.
-file(WRITE ${SDK_CONFIG_FILE} "")
+#file(WRITE ${SDK_CONFIG_FILE} "")
 
-file(READ ${MICROPY_SDK_CONFIG_FILE} CONTENTS)
-file(APPEND ${SDK_CONFIG_FILE} "${CONTENTS}")
+#file(READ ${MICROPY_SDK_CONFIG_FILE_IN} CONTENTS)
+#file(APPEND ${SDK_CONFIG_FILE} "${CONTENTS}")
 
-file(READ ${SDK_CONFIG_FILE_IN} CONTENTS)
-file(APPEND ${SDK_CONFIG_FILE} "${CONTENTS}")
+#file(READ ${SDK_CONFIG_FILE_IN} CONTENTS)
+#file(APPEND ${SDK_CONFIG_FILE} "${CONTENTS}")
 
-#configure_file(${SDK_CONFIG_FILE_IN} ${SDK_CONFIG_FILE} COPYONLY)
-set(SDKCONFIG_DEFAULTS ${SDK_CONFIG_FILE})
+#configure_file(${SDK_CONFIG_FILE_IN} ${SDK_CONFIG_FILE_BUILD} )
+
+#set(SDK_CONFIG_DEFAULTS ${SDK_CONFIG_FILE_BUILD})
+
+project(mptest)
+
+
+
