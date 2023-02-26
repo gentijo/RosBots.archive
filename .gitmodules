@@ -1,3 +1,3 @@
-[submodule "microros_ws/extern/micropython"]
-	path = microros_ws/extern/micropython
+[submodule "microros_ws/libs/micropython"]
+	path = microros_ws/libs/micropython
 	url = https://github.com/micropython/micropython.git
