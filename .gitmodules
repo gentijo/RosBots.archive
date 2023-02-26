@@ -1,3 +1,6 @@
-[submodule "microros_ws/extern/micropython"]
-	path = microros_ws/extern/micropython
+[submodule "microros_ws/libs/micropython"]
+	path = microros_ws/libs/micropython
 	url = https://github.com/micropython/micropython.git
+[submodule "microros_ws/libs/micropython-wrap"]
+	path = microros_ws/libs/micropython-wrap
+	url = https://github.com/stinos/micropython-wrap.git
